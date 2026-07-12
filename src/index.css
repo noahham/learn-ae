@@ -30,6 +30,9 @@
   }
 }
 
+/* make sizing predictable so padding/borders don't cause unexpected overflow */
+*, *::before, *::after { box-sizing: border-box; }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;

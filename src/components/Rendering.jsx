@@ -1,9 +1,6 @@
 import "./PageTemplate.css";
-import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import {
   IconArrowBarToDown,
-  IconArrowNarrowRight,
   IconDownload,
 } from "@tabler/icons-react";
 import Navbar from "./Navbar";
@@ -21,44 +18,11 @@ function renderWithCode(text) {
   });
 }
 
+// Same shape as PageTemplate, minus `nextPage` — this is the last page in the
+// flow, so there's no "Continue To" card and the hero has just one button.
 // blocks: array of { type: "paragraph", text } | { type: "image", src, alt } | { type: "header", text }
 // download: { label, sizeLabel, href }
-// nextPage: { slug, heading, label } -> links to /{slug}
-export default function PageTemplate({ title, blocks, download, nextPage, accent }) {
-  const cardNextHolderRef = useRef(null);
-  const cardNextRef = useRef(null);
-  const cardEyebrowRef = useRef(null);
-  const cardHeadingRef = useRef(null);
-
-  useEffect(() => {
-    const calculateOffset = () => {
-      if (!cardNextHolderRef.current || !cardNextRef.current) return;
-      const cardNextHeight = cardNextRef.current.offsetHeight;
-      const cardNextHolderHeight = cardNextHolderRef.current.offsetHeight;
-      const offset = cardNextHeight - 16 - cardNextHolderHeight;
-      cardNextHolderRef.current.style.setProperty("--card-next-offset", `${offset}px`);
-    };
-
-    const calculateMarginOffsets = () => {
-      if (!cardNextRef.current || !cardEyebrowRef.current || !cardHeadingRef.current) return;
-      const cardNextWidth = cardNextRef.current.offsetWidth;
-      const eyebrowWidth = cardEyebrowRef.current.offsetWidth;
-      const headingWidth = cardHeadingRef.current.offsetWidth;
-      cardEyebrowRef.current.style.setProperty("--card-span-margin", `${cardNextWidth - eyebrowWidth - 54}px`);
-      cardHeadingRef.current.style.setProperty("--card-span-margin", `${cardNextWidth - headingWidth - 54}px`);
-    };
-
-    calculateOffset();
-    calculateMarginOffsets();
-
-    const handleResize = () => {
-      calculateOffset();
-      calculateMarginOffsets();
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [blocks]); // recalc if content changes (different page)
-
+export default function Rendering({ title, blocks, download, accent }) {
   return (
     <div className="page" style={accent ? { "--accent": accent } : undefined}>
       <div className="top-fade" />
@@ -72,10 +36,6 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
             <button className="btn btn-primary">
               <span>Demo</span>
               <IconArrowBarToDown size={24} stroke={1.5} color="black" />
-            </button>
-            <button className="btn btn-outline">
-              <span>{nextPage.label}</span>
-              <IconArrowNarrowRight size={24} stroke={1.5} color="white" />
             </button>
           </div>
         </section>
@@ -106,7 +66,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
             return null;
           })}
 
-          <div className="cards">
+          <div className="cards cards-single">
             <a className="card card-download" href={download.href} download>
               <IconDownload width={70} height={76} stroke={1.25} color="white" preserveAspectRatio="none" />
               <div className="card-download-text">
@@ -114,13 +74,6 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
                 <span className="card-subtitle">{download.sizeLabel}</span>
               </div>
             </a>
-
-            <Link to={`/${nextPage.slug}`} className="card card-next" ref={cardNextRef}>
-              <div className="card-next-holder" ref={cardNextHolderRef}>
-                <span className="card-eyebrow" ref={cardEyebrowRef}>Continue To</span>
-                <span className="card-heading" ref={cardHeadingRef}>{nextPage.heading}</span>
-              </div>
-            </Link>
           </div>
         </section>
       </main>
