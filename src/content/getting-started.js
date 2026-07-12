@@ -3,6 +3,7 @@
 
 const gettingStartedContent = {
   title: "THE START",
+  accent: "#E3170A",
   download: {
     label: "Download All Demos",
     sizeLabel: "167mb ZIP File.",

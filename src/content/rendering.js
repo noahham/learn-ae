@@ -3,15 +3,11 @@
 
 const renderingContent = {
   title: "RENDERING",
+  accent: "#FFC43D",
   download: {
     label: "Download Demo",
     sizeLabel: "167mb ZIP File.",
     href: "/downloads/idk-demo.zip",
-  },
-  nextPage: {
-    slug: "idk",
-    heading: "IDK",
-    label: "IDK",
   },
   blocks: [
     {

@@ -3,6 +3,7 @@
 
 const easingContent = {
   title: "EASING",
+  accent: "#910DDD",
   download: {
     label: "Download Demo",
     sizeLabel: "167mb ZIP File.",

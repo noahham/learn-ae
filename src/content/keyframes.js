@@ -3,6 +3,7 @@
 
 const keyframesContent = {
   title: "KEYFRAMES",
+  accent: "#E3170A",
   download: {
     label: "Download Demo",
     sizeLabel: "167mb ZIP File.",

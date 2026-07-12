@@ -43,7 +43,7 @@ body {
 .top-fade {
     position: fixed;
     inset: 0 0 auto 0;
-    height: 120px;
+    height: 110px;
     background: linear-gradient(180deg, #0c0e23 0%, rgba(12, 14, 35, 0) 100%);
     z-index: 5;
     pointer-events: none;
@@ -90,6 +90,8 @@ body {
 
 .navbar-link-active svg {
     stroke: var(--accent);
+    fill: var(--accent);
+    fill-opacity: 60%;
 }
 
 .main {
@@ -159,6 +161,21 @@ body {
 .btn-primary {
     background: #fff;
     color: #000;
+    border: 1px var(--border) solid;
+    transition: all 500ms;
+}
+
+.btn-primary:hover svg {
+    transition: all 500ms;
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover svg {
+    stroke: #fff;
 }
 
 .btn-outline {
