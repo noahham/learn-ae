@@ -8,6 +8,8 @@
     --border: rgba(255, 255, 255, 0.1);
     --font-display: "Costaline", -apple-system, Roboto, Helvetica, sans-serif;
     --font-body: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+    --card-next-offset: 0px;
+    --card-span-margin: 0px;
 }
 
 html {
