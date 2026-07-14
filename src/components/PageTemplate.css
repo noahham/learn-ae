@@ -273,6 +273,15 @@ code {
     text-decoration: none;
 }
 
+.render-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex: 1 0 100%;
+    background: var(--card-bg);
+    padding: 0 24px;
+}
+
 .card-download-text {
     display: flex;
     flex-direction: column;

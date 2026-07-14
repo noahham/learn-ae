@@ -48,8 +48,11 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
       cardHeadingRef.current.style.setProperty("--card-span-margin", `${cardNextWidth - headingWidth - 54}px`);
     };
 
-    calculateOffset();
-    calculateMarginOffsets();
+    // Use requestAnimationFrame to ensure DOM is painted before measuring offsetHeight/offsetWidth
+    requestAnimationFrame(() => {
+      calculateOffset();
+      calculateMarginOffsets();
+    });
 
     const handleResize = () => {
       calculateOffset();

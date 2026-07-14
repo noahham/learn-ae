@@ -1,9 +1,9 @@
 import "./PageTemplate.css";
 import {
-  IconArrowBarToDown,
-  IconDownload,
+  IconArrowBackUp,
 } from "@tabler/icons-react";
 import Navbar from "./Navbar";
+import {useEffect, useRef} from "react";
 
 // Turns `word` into <code>word</code> and *word* into <em>word</em> within a paragraph string
 function renderWithCode(text) {
@@ -22,7 +22,29 @@ function renderWithCode(text) {
 // flow, so there's no "Continue To" card and the hero has just one button.
 // blocks: array of { type: "paragraph", text } | { type: "image", src, alt } | { type: "header", text }
 // download: { label, sizeLabel, href }
-export default function Rendering({ title, blocks, download, accent }) {
+export default function Rendering({ title, blocks, accent }) {
+  const cardNextHolderRef = useRef(null);
+  const cardNextRef = useRef(null);
+
+  useEffect(() => {
+    const calculateOffset = () => {
+      if (!cardNextHolderRef.current || !cardNextRef.current) return;
+      const cardNextHeight = cardNextRef.current.offsetHeight;
+      const cardNextHolderHeight = cardNextHolderRef.current.offsetHeight;
+      const offset = cardNextHeight - 16 - cardNextHolderHeight;
+      cardNextHolderRef.current.style.setProperty("--card-next-offset", `${offset}px`);
+    };
+
+    // Use requestAnimationFrame to ensure DOM is painted before measuring offsetHeight
+    requestAnimationFrame(() => calculateOffset());
+
+    const handleResize = () => {
+      calculateOffset();
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [blocks]); // recalc if content changes (different page)
+
   return (
     <div className="page" style={accent ? { "--accent": accent } : undefined}>
       <div className="top-fade" />
@@ -33,9 +55,9 @@ export default function Rendering({ title, blocks, download, accent }) {
           <div className="placeholder opening-graphic" />
           <h1 className="title">{title}</h1>
           <div className="buttons">
-            <button className="btn btn-primary">
-              <span>Demo</span>
-              <IconArrowBarToDown size={24} stroke={1.5} color="black" />
+            <button className="btn btn-outline">
+              <span>Restart</span>
+              <IconArrowBackUp size={24} stroke={1.5} color="white" />
             </button>
           </div>
         </section>
@@ -67,13 +89,12 @@ export default function Rendering({ title, blocks, download, accent }) {
           })}
 
           <div className="cards cards-single">
-            <a className="card card-download" href={download.href} download>
-              <IconDownload width={70} height={76} stroke={1.25} color="white" preserveAspectRatio="none" />
-              <div className="card-download-text">
-                <span className="card-title">{download.label}</span>
-                <span className="card-subtitle">{download.sizeLabel}</span>
+            <div className="card render-card"  ref={cardNextRef}>
+              <div className="card-next-holder" ref={cardNextHolderRef}>
+                <span className="card-eyebrow">Thank you so much,</span>
+                <span className="card-heading">YOU'RE ALL DONE</span>
               </div>
-            </a>
+            </div>
           </div>
         </section>
       </main>
