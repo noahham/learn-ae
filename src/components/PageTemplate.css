@@ -12,6 +12,10 @@
     --card-span-margin: 0px;
 }
 
+::selection {
+    background-color: rgba(255, 255, 255, 0.125);;
+}
+
 html {
     background-color: var(--bg) !important;
 }
@@ -70,10 +74,6 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.navbar svg {
-    flex-shrink: 0;
-}
-
 .navbar-link {
     display: flex;
     align-items: center;
@@ -84,6 +84,15 @@ body {
 
 .navbar-link:hover {
     opacity: 1;
+}
+
+.navbar-link svg {
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.navbar-link:hover svg {
+    transform: scale(1.075);
 }
 
 .navbar-link-active {
@@ -356,6 +365,9 @@ code {
     .card-eyebrow,
     .card-heading {
         transition: none !important;
+    }
+    .navbar-link:hover svg {
+        animation: none;
     }
 }
 
