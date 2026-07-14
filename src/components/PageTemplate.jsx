@@ -1,6 +1,6 @@
 import "./PageTemplate.css";
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LottiePlayer from "./LottiePlayer";
 import {
   IconArrowBarToDown,
@@ -26,6 +26,7 @@ function renderWithCode(text) {
 // download: { label, sizeLabel, href }
 // nextPage: { slug, heading, label } -> links to /{slug}
 export default function PageTemplate({ title, blocks, download, nextPage, accent, animation }) {
+  const navigate = useNavigate();
   const cardNextHolderRef = useRef(null);
   const cardNextRef = useRef(null);
   const cardEyebrowRef = useRef(null);
@@ -78,7 +79,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
               <span>Demo</span>
               <IconArrowBarToDown size={24} stroke={1.5} color="black" />
             </button>
-            <button className="btn btn-outline">
+            <button className="btn btn-outline" type="button" onClick={() => navigate(`/${nextPage.slug}`)}>
               <span>{nextPage.label}</span>
               <IconArrowNarrowRight size={24} stroke={1.5} color="white" />
             </button>
