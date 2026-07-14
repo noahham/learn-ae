@@ -1,5 +1,6 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+// import effectsAnim from "../assets/animations/effects.json";
 
 const effectsContent = {
   title: "EFFECTS",
@@ -9,6 +10,7 @@ const effectsContent = {
     sizeLabel: "167mb ZIP File.",
     href: "/downloads/effects-demo.zip",
   },
+  // animation: effectsAnim,
   nextPage: {
     slug: "keyframes",
     heading: "KEYFRAMES",

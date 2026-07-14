@@ -1,5 +1,6 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import easingAnim from "../assets/animations/easing.json";
 
 const easingContent = {
   title: "EASING",
@@ -9,6 +10,7 @@ const easingContent = {
     sizeLabel: "167mb ZIP File.",
     href: "/downloads/easing-demo.zip",
   },
+  animation: easingAnim,
   nextPage: {
     slug: "blending",
     heading: "BLENDING",

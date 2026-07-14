@@ -1,5 +1,7 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import layersAnim from "../assets/animations/layers.json";
+
 
 const layersContent = {
   title: "LAYERS",
@@ -9,6 +11,7 @@ const layersContent = {
     sizeLabel: "167mb ZIP File.",
     href: "/downloads/layers-demo.zip",
   },
+  animation: layersAnim,
   nextPage: {
     slug: "shapes",
     heading: "SHAPES",

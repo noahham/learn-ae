@@ -102,16 +102,15 @@ body {
     gap: clamp(40px, 6vw, 80px);
     max-width: 815px;
     margin: 0 auto;
-    padding: clamp(64px, 10vw, 188px) 0 0;
+    padding: clamp(64px, 5vw, 188px) 0 0;
 }
 
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     width: 100%;
-    padding-bottom: 21px;
 }
 
 .placeholder {
@@ -120,8 +119,7 @@ body {
 }
 
 .opening-graphic {
-    width: 100%;
-    max-width: 542px;
+    max-height: 450px;
     aspect-ratio: 542 / 346;
 }
 
@@ -132,7 +130,7 @@ body {
     font-size: clamp(40px, 9vw, 96px);
     font-weight: 700;
     line-height: 1;
-    margin: 28px 0 8px;
+    margin: 0;
 }
 
 .buttons {

@@ -2,6 +2,7 @@ import "./PageTemplate.css";
 import {
   IconArrowBackUp,
 } from "@tabler/icons-react";
+import LottiePlayer from "./LottiePlayer";
 import Navbar from "./Navbar";
 import {useEffect, useRef} from "react";
 
@@ -22,7 +23,7 @@ function renderWithCode(text) {
 // flow, so there's no "Continue To" card and the hero has just one button.
 // blocks: array of { type: "paragraph", text } | { type: "image", src, alt } | { type: "header", text }
 // download: { label, sizeLabel, href }
-export default function Rendering({ title, blocks, accent }) {
+export default function Rendering({ title, blocks, accent, animation }) {
   const cardNextHolderRef = useRef(null);
   const cardNextRef = useRef(null);
 
@@ -52,7 +53,11 @@ export default function Rendering({ title, blocks, accent }) {
 
       <main className="main">
         <section className="hero">
-          <div className="placeholder opening-graphic" />
+          {animation ? (
+            <LottiePlayer animationData={animation} loop className="opening-graphic" />
+          ) : (
+            <div className="placeholder opening-graphic" />
+          )}
           <h1 className="title">{title}</h1>
           <div className="buttons">
             <button className="btn btn-outline">

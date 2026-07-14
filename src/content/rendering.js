@@ -1,9 +1,12 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import renderingAnim from "../assets/animations/rendering.json";
+
 
 const renderingContent = {
   title: "RENDERING",
   accent: "#FFC43D",
+  animation: renderingAnim,
   blocks: [
     {
       type: "paragraph",

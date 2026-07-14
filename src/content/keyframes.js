@@ -1,5 +1,7 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import keyframesAnim from "../assets/animations/keyframing.json";
+
 
 const keyframesContent = {
   title: "KEYFRAMES",
@@ -9,6 +11,7 @@ const keyframesContent = {
     sizeLabel: "167mb ZIP File.",
     href: "/downloads/keyframes-demo.zip",
   },
+  animation: keyframesAnim,
   nextPage: {
     slug: "easing",
     heading: "EASING",

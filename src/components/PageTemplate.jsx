@@ -1,6 +1,7 @@
 import "./PageTemplate.css";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import LottiePlayer from "./LottiePlayer";
 import {
   IconArrowBarToDown,
   IconArrowNarrowRight,
@@ -24,7 +25,7 @@ function renderWithCode(text) {
 // blocks: array of { type: "paragraph", text } | { type: "image", src, alt } | { type: "header", text }
 // download: { label, sizeLabel, href }
 // nextPage: { slug, heading, label } -> links to /{slug}
-export default function PageTemplate({ title, blocks, download, nextPage, accent }) {
+export default function PageTemplate({ title, blocks, download, nextPage, accent, animation }) {
   const cardNextHolderRef = useRef(null);
   const cardNextRef = useRef(null);
   const cardEyebrowRef = useRef(null);
@@ -48,11 +49,8 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
       cardHeadingRef.current.style.setProperty("--card-span-margin", `${cardNextWidth - headingWidth - 54}px`);
     };
 
-    // Use requestAnimationFrame to ensure DOM is painted before measuring offsetHeight/offsetWidth
-    requestAnimationFrame(() => {
-      calculateOffset();
-      calculateMarginOffsets();
-    });
+    calculateOffset();
+    calculateMarginOffsets();
 
     const handleResize = () => {
       calculateOffset();
@@ -69,7 +67,11 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
 
       <main className="main">
         <section className="hero">
-          <div className="placeholder opening-graphic" />
+          {animation ? (
+            <LottiePlayer animationData={animation} loop className="opening-graphic" />
+          ) : (
+            <div className="placeholder opening-graphic" />
+          )}
           <h1 className="title">{title}</h1>
           <div className="buttons">
             <button className="btn btn-primary">

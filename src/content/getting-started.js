@@ -1,5 +1,6 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import gettingStartedAnim from "../assets/animations/getting-started.json";
 
 const gettingStartedContent = {
   title: "THE START",
@@ -14,6 +15,7 @@ const gettingStartedContent = {
     heading: "LAYERS",
     label: "Layers",
   },
+  animation: gettingStartedAnim,
   blocks: [
     {
       type: "paragraph",
