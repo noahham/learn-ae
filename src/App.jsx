@@ -3,14 +3,14 @@ import { useEffect } from "react";
 import PageTemplate from "./components/PageTemplate";
 import Rendering from "./components/Rendering";
 
-import gettingStartedContent from "./content/getting-started.js";
-import layersContent from "./content/layers.js";
-import shapesContent from "./content/shapes.js";
-import effectsContent from "./content/effects.js";
-import keyframesContent from "./content/keyframes";
-import easingContent from "./content/easing";
-import blendingContent from "./content/blending.js";
-import renderingContent from "./content/rendering.js";
+import gettingStartedContent from "./content/getting-started.jsx";
+import layersContent from "./content/layers.jsx";
+import shapesContent from "./content/shapes.jsx";
+import effectsContent from "./content/effects.jsx";
+import keyframesContent from "./content/keyframes.jsx";
+import easingContent from "./content/easing.jsx";
+import blendingContent from "./content/blending.jsx";
+import renderingContent from "./content/rendering.jsx";
 
 function App() {
   // Render routes inside a child that can access location. That lets us

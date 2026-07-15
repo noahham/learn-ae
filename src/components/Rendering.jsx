@@ -1,5 +1,4 @@
 import "./PageTemplate.css";
-import { Link, useNavigate } from "react-router-dom";
 import {
   IconArrowBackUp,
 } from "@tabler/icons-react";
@@ -25,7 +24,6 @@ function renderWithCode(text) {
 // blocks: array of { type: "paragraph", text } | { type: "image", src, alt } | { type: "header", text }
 // download: { label, sizeLabel, href }
 export default function Rendering({ title, blocks, accent, animation }) {
-  const navigate = useNavigate();
   const cardNextHolderRef = useRef(null);
   const cardNextRef = useRef(null);
 
@@ -62,7 +60,7 @@ export default function Rendering({ title, blocks, accent, animation }) {
           )}
           <h1 className="title">{title}</h1>
           <div className="buttons">
-            <button className="btn btn-outline" type="button" onClick={() => navigate(`/getting-started`)}>
+            <button className="btn btn-outline">
               <span>Restart</span>
               <IconArrowBackUp size={24} stroke={1.5} color="white" />
             </button>
@@ -89,6 +87,13 @@ export default function Rendering({ title, blocks, accent, animation }) {
               return (
                 <div key={i} className="section-header">
                   <h2>{block.text}</h2>
+                </div>
+              );
+            }
+            if (block.type === "component") {
+              return (
+                <div key={i} className="block-component">
+                  {block.node}
                 </div>
               );
             }

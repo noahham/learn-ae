@@ -109,6 +109,13 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
                 </div>
               );
             }
+            if (block.type === "component") {
+              return (
+                <div key={i} className="block-component">
+                  {block.node}
+                </div>
+              );
+            }
             return null;
           })}
 

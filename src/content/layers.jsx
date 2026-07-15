@@ -1,6 +1,7 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import layersAnim from "../assets/animations/layers.json";
+import MultiLayer from "../components/MultiLayer.jsx";
 
 
 const layersContent = {
@@ -38,9 +39,9 @@ const layersContent = {
           "amount of frames that it’s visible. Its horizontal location is *when* it’s visible.",
     },
     {
-      type: "image",
+      type: "component",
       // src: diagramOne,   // uncomment once you import a real image above
-      alt: "ANIMATION keyframes scrubbing",
+      node: <MultiLayer />,
     },
     {
       type: "paragraph",

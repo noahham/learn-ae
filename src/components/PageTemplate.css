@@ -62,12 +62,12 @@ body {
     transform: translate(-50%, 0);
     z-index: 10;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: clamp(16px, 4vw, 48px);
-    max-width: min(90vw, 580px);
-    padding: 12px 20px;
+    gap: clamp(16px, 1.5vw, 48px);
+    max-width: fit-content;
+    padding: 8px 20px;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--card-bg);
@@ -79,6 +79,7 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0.7;
+    padding: 4px 12px;
     transition: opacity 150ms ease, background 150ms ease;
 }
 
@@ -171,11 +172,11 @@ body {
     background: #fff;
     color: #000;
     border: 1px var(--border) solid;
-    transition: all 500ms;
+    transition: all 350ms;
 }
 
-.btn-primary:hover svg {
-    transition: all 500ms;
+.btn-primary svg {
+    transition: all 350ms;
 }
 
 .btn-primary:hover {
@@ -190,6 +191,12 @@ body {
 .btn-outline {
     background: transparent;
     color: #fff;
+    border: 2px solid var(--border);
+    transition: all 500ms;
+}
+
+.btn-outline:hover {
+    background: var(--card-bg);
     border: 2px solid #fff;
 }
 
@@ -239,6 +246,13 @@ code {
     background: var(--card-bg);
 }
 
+.block-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(20px, 5vw, 40px) 0;
+}
+
 .section-header {
     display: flex;
     padding-top: 32px;
@@ -280,6 +294,11 @@ code {
     flex: 0 0 260px;
     background: var(--card-bg);
     text-decoration: none;
+    transition: all 300ms;
+}
+
+.card-download:hover {
+    background: color-mix(in srgb, var(--card-bg), white 5%);
 }
 
 .render-card {
@@ -316,7 +335,9 @@ code {
     flex: 2 1 320px;
     background: var(--accent);
     padding: 0 24px;
+    transition: background-color 300ms;
 }
+
 
 .card-next-holder {
     display: flex;
@@ -350,6 +371,7 @@ code {
 
 .card-next:hover {
     cursor: pointer;
+    background: color-mix(in srgb, var(--accent), white 5%);
 }
 
 .card-next:hover .card-eyebrow,

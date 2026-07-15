@@ -1,0 +1,100 @@
+.multi-layer-card {
+    --shape-outline: rgba(255, 255, 255, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 59px;
+    width: 644px;
+    padding: 43px 69px;
+    border-radius: 8px;
+    border: 1px solid var(--shape-outline);
+    background: #1B1D31;
+}
+
+.viewfinder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid #313345;
+    background: #0C0E23;
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    width: 506px;
+    height: 269px;
+}
+
+.layers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 506px;
+    height: 251px;
+}
+
+.timeline-nav {
+    position: relative;
+    align-self: stretch;
+    height: 47px;
+    border-radius: 8px;
+    border: 1px solid var(--shape-outline);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.layer {
+    position: relative;
+    width: 178px;
+    height: 47px;
+    border-radius: 8px;
+    border: 1px solid var(--shape-outline);
+}
+
+.layer-blue {
+    background: #177FCE;
+    margin-left: calc(506px - 178px);
+}
+
+.layer-purple {
+    background: #910DDD;
+}
+
+.layer-red {
+    align-self: stretch;
+    width: auto;
+    background: #E3170A;
+}
+
+.playhead-wrapper {
+    position: absolute;
+    left: -105px;
+    top: -2px;
+    width: auto;
+    height: auto;
+}
+
+.playhead {
+    /* position moved to wrapper so bounding rect reflects the animated SVG inside reliably */
+    fill: #FFF;
+    animation: playheadScroll 3.5s linear infinite;
+}
+
+@keyframes playheadScroll {
+    from {transform: translateX(0)}
+    to {transform: translateX(440px)}
+}
+
+/* viewfinder indicators: start hidden and toggle instantly */
+.viewfinder .purple-rect,
+.viewfinder .blue-triangle {
+    opacity: 0;
+    transition: none;
+    pointer-events: none;
+}
