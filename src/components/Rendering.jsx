@@ -1,4 +1,4 @@
-import "./PageTemplate.css";
+import "../styles/PageTemplate.css";
 import {
   IconArrowBackUp,
 } from "@tabler/icons-react";

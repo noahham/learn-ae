@@ -1,4 +1,4 @@
-.multi-layer-card {
+.layer-card {
     --shape-outline: rgba(255, 255, 255, 0.10);
     display: flex;
     flex-direction: column;
@@ -13,9 +13,11 @@
 
 .viewfinder {
     display: flex;
-    justify-content: space-between;
+    gap: 28px;
+    flex-direction: row;
     align-items: center;
-    align-self: stretch;
+    width: 506px;
+    height: 239px;
     border-radius: 8px;
     border: 1px solid #313345;
     background: #0C0E23;
@@ -25,7 +27,6 @@
 .timeline {
     position: relative;
     width: 506px;
-    height: 269px;
 }
 
 .layers {
@@ -33,11 +34,9 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 21px;
-    position: absolute;
     left: 0;
     top: 5px;
     width: 506px;
-    height: 251px;
 }
 
 .timeline-nav {
@@ -57,44 +56,10 @@
     border: 1px solid var(--shape-outline);
 }
 
-.layer-blue {
-    background: #177FCE;
-    margin-left: calc(506px - 178px);
-}
-
-.layer-purple {
-    background: #910DDD;
-}
-
-.layer-red {
-    align-self: stretch;
-    width: auto;
-    background: #E3170A;
-}
-
 .playhead-wrapper {
     position: absolute;
     left: -105px;
     top: -2px;
     width: auto;
     height: auto;
-}
-
-.playhead {
-    /* position moved to wrapper so bounding rect reflects the animated SVG inside reliably */
-    fill: #FFF;
-    animation: playheadScroll 3.5s linear infinite;
-}
-
-@keyframes playheadScroll {
-    from {transform: translateX(0)}
-    to {transform: translateX(440px)}
-}
-
-/* viewfinder indicators: start hidden and toggle instantly */
-.viewfinder .purple-rect,
-.viewfinder .blue-triangle {
-    opacity: 0;
-    transition: none;
-    pointer-events: none;
 }

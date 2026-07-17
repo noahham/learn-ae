@@ -1,0 +1,32 @@
+.layer-yellow-uncropped {
+    align-self: stretch;
+    width: auto;
+    background: rgba(255, 196, 61, 0.15);
+}
+
+.layer-yellow {
+    align-self: stretch;
+    width: 200px;
+    background: #FFC43D;
+}
+
+.yellow-square {
+    width: 124px;
+    height: 124px;
+    flex-shrink: 0;
+}
+
+/* TEMP (will delete later when adding new animation) */
+.viewfinder {
+    justify-content: center;
+}
+
+.playhead {
+    fill: #FFF;
+    animation: playheadScroll 6s linear infinite;
+}
+
+@keyframes playheadScroll {
+    from {transform: translateX(0)}
+    to {transform: translateX(440px)}
+}

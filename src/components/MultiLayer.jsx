@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import "./MultiLayer.css";
+import "../styles/Layers.css";
+import "../styles/MultiLayer.css";
 import Playhead from "../assets/vectors/playhead.svg?react";
 
 export default function MultiLayer() {
@@ -65,57 +66,34 @@ export default function MultiLayer() {
   }, []);
 
   return (
-    <div className="multi-layer-card">
-      <svg
-        className="viewfinder"
-        width="506"
-        height="239"
-        viewBox="0 0 506 239"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect x="0.5" y="0.5" width="505" height="238" rx="8" fill="#0C0E23" />
-        {/* purple rect (second rect) */}
-        <rect
-          ref={viewfinderPurpleRef}
-          className="purple-rect"
-          x="38"
-          y="58"
-          width="124"
-          height="124"
-          fill="#910DDD"
-          style={{ opacity: 0 }}
-        />
-        {/* white circle, always visible */}
-        <circle
-          cx="253"
-          cy="120"
-          r="62"
-          fill="#E3170A"
-        />
-        {/* blue triangle */}
-        <polygon
-          ref={viewfinderBlueRef}
-          className="blue-triangle"
-          points="327,182 470.2,182 398.6,58"
-          fill="#177FCE"
-          style={{ opacity: 0 }}
-        />
-      </svg>
-
-      <div className="timeline">
-        <div className="layers">
-          <div className="timeline-nav" />
-          <div ref={layerBlueRef} className="layer layer-blue" />
-          <div ref={layerPurpleRef} className="layer layer-purple" />
-          <div className="layer layer-red" />
+      <div className="layer-card">
+        <div className="viewfinder">
+          <div
+              ref={viewfinderPurpleRef}
+              className="purple-square"
+              style={{ opacity: 0 }}
+          />
+          <div className="red-circle" />
+          <div
+              ref={viewfinderBlueRef}
+              className="blue-triangle"
+              style={{ opacity: 0 }}
+          />
         </div>
 
-        {/* wrapper around playhead to reliably query the rendered SVG inside */}
-        <div ref={playheadWrapperRef} className="playhead-wrapper">
-          <Playhead width={276} height={276} className={"playhead"} />
+        <div className="timeline">
+          <div className="layers">
+            <div className="timeline-nav" />
+            <div ref={layerBlueRef} className="layer layer-blue" />
+            <div ref={layerPurpleRef} className="layer layer-purple" />
+            <div className="layer layer-red" />
+          </div>
+
+          {/* wrapper around playhead to reliably query the rendered SVG inside */}
+          <div ref={playheadWrapperRef} className="playhead-wrapper">
+            <Playhead width={276} height={276} className={"playhead"} />
+          </div>
         </div>
       </div>
-    </div>
   );
 }

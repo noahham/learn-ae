@@ -1,0 +1,57 @@
+.layer-blue {
+    background: #177FCE;
+    margin-left: calc(506px - 178px);
+}
+
+.layer-purple {
+    background: #910DDD;
+}
+
+.layer-red {
+    align-self: stretch;
+    width: auto;
+    background: #E3170A;
+}
+
+.purple-square {
+    width: 124px;
+    height: 124px;
+    background: #910DDD;
+    flex-shrink: 0;
+}
+
+.red-circle {
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    background: #E3170A;
+    flex-shrink: 0;
+}
+
+.blue-triangle {
+    /* equilateral triangle: side length = height * 2/sqrt(3), so it's the
+       same height as the square/circle while keeping all three sides equal */
+    width: 143px;
+    height: 124px;
+    background: #177FCE;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    flex-shrink: 0;
+}
+
+/* viewfinder indicators: start hidden and toggle instantly */
+.viewfinder .purple-rect,
+.viewfinder .blue-triangle {
+    opacity: 0;
+    transition: none;
+    pointer-events: none;
+}
+
+.playhead {
+    fill: #FFF;
+    animation: multiPlayheadScroll 3.5s linear infinite;
+}
+
+@keyframes multiPlayheadScroll {
+    from {transform: translateX(0)}
+    to {transform: translateX(440px)}
+}

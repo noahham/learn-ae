@@ -1,4 +1,4 @@
-import "./PageTemplate.css";
+import "../styles/PageTemplate.css";
 import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LottiePlayer from "./LottiePlayer";

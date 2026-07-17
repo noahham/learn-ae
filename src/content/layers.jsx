@@ -2,6 +2,7 @@
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import layersAnim from "../assets/animations/layers.json";
 import MultiLayer from "../components/MultiLayer.jsx";
+import SingleLayer from "../components/SingleLayer.jsx";
 
 
 const layersContent = {
@@ -57,9 +58,9 @@ const layersContent = {
           "the video in order to change which part of the video is actually shown for the layer.",
     },
     {
-      type: "image",
+      type: "component",
       // src: diagramOne,   // uncomment once you import a real image above
-      alt: "BLACK BOX video demo",
+      node: <SingleLayer />,
     },
     {
       type: "image",
