@@ -89,10 +89,10 @@ export default function MultiLayer() {
             <div className="layer layer-red" />
           </div>
 
-          {/* wrapper around playhead to reliably query the rendered SVG inside */}
-          <div ref={playheadWrapperRef} className="playhead-wrapper">
-            <Playhead width={276} height={276} className={"playhead"} />
-          </div>
+           {/* wrapper around playhead to reliably query the rendered SVG inside */}
+           <div ref={playheadWrapperRef} className="playhead-wrapper">
+             <Playhead width={276} height={276} className={"multi-playhead"} />
+           </div>
         </div>
       </div>
   );

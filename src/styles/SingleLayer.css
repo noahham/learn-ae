@@ -21,12 +21,12 @@
     justify-content: center;
 }
 
-.playhead {
+.single-playhead {
     fill: #FFF;
-    animation: playheadScroll 6s linear infinite;
+    animation: singlePlayheadScroll 6s linear infinite;
 }
 
-@keyframes playheadScroll {
+@keyframes singlePlayheadScroll {
     from {transform: translateX(0)}
     to {transform: translateX(440px)}
 }

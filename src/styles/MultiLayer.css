@@ -46,7 +46,7 @@
     pointer-events: none;
 }
 
-.playhead {
+.multi-playhead {
     fill: #FFF;
     animation: multiPlayheadScroll 3.5s linear infinite;
 }

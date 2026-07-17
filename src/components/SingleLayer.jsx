@@ -61,7 +61,7 @@ export default function SingleLayer() {
         <div className="layer-card">
             <div className="viewfinder">
                 <div ref={viewfinderYellowRef} className="yellow-square">
-                    <LottiePlayer animationData={animation} loop className />
+                    <LottiePlayer animationData={animation} loop />
                 </div>
 
             </div>
@@ -74,10 +74,10 @@ export default function SingleLayer() {
                     </div>
                 </div>
 
-                {/* wrapper around playhead to reliably query the rendered SVG inside */}
-                <div ref={playheadWrapperRef} className="playhead-wrapper">
-                    <Playhead width={276} height={276} className={"playhead"} />
-                </div>
+                 {/* wrapper around playhead to reliably query the rendered SVG inside */}
+                 <div ref={playheadWrapperRef} className="playhead-wrapper">
+                     <Playhead width={276} height={276} className={"single-playhead"} />
+                 </div>
             </div>
         </div>
     );
