@@ -354,6 +354,7 @@ code {
     text-align: left;
     margin-left: 0;
     width: fit-content;
+    white-space: nowrap;   /* 👈 add this line */
     transition: margin-left 600ms ease;
 }
 

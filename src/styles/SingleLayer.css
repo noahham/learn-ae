@@ -2,13 +2,26 @@
     align-self: stretch;
     width: auto;
     background: rgba(255, 196, 61, 0.15);
+    overflow: hidden;
 }
 
 .layer-yellow {
     align-self: stretch;
     width: 200px;
     background: #FFC43D;
+    cursor: grab;
+    touch-action: none;
+    transition: background-color 150ms;
 }
+
+.layer-yellow:hover {
+    background-color: color-mix(in srgb, #FFC43D, white 20%);
+}
+
+.layer-yellow:active {
+    cursor: grabbing;
+}
+
 
 .yellow-square {
     width: 124px;

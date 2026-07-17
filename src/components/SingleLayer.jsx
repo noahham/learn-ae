@@ -8,8 +8,54 @@ import animation from "../assets/animations/single-layer.json";
 export default function SingleLayer() {
     const playheadWrapperRef = useRef(null);
     const layerYellowRef = useRef(null);
+    const layerUncroppedRef = useRef(null);
     const viewfinderYellowRef = useRef(null);
     const rafRef = useRef(null);
+
+    // drag state lives in refs, not React state, so dragging doesn't trigger re-renders
+    const dragRef = useRef({ dragging: false, startX: 0, startOffset: 0 });
+    const offsetRef = useRef(0); // current translateX in px
+
+    function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    }
+
+    function getBounds() {
+        const track = layerUncroppedRef.current;
+        const layer = layerYellowRef.current;
+        if (!track || !layer) return { min: 0, max: 0 };
+        const trackWidth = track.clientWidth;
+        const layerWidth = layer.offsetWidth;
+        const min = Math.min(0, trackWidth - layerWidth);
+        const max = Math.max(0, trackWidth - layerWidth);
+        return { min, max };
+    }
+
+    function handlePointerDown(e) {
+        const layer = layerYellowRef.current;
+        if (!layer) return;
+        dragRef.current = { dragging: true, startX: e.clientX, startOffset: offsetRef.current };
+        layer.setPointerCapture(e.pointerId);
+    }
+
+    function handlePointerMove(e) {
+        if (!dragRef.current.dragging) return;
+        const { startX, startOffset } = dragRef.current;
+        const { min, max } = getBounds();
+        const next = clamp(startOffset + (e.clientX - startX), min, max);
+        offsetRef.current = next;
+        if (layerYellowRef.current) {
+            layerYellowRef.current.style.transform = `translateX(${next}px)`;
+        }
+    }
+
+    function handlePointerUp(e) {
+        dragRef.current.dragging = false;
+        const layer = layerYellowRef.current;
+        if (layer && layer.hasPointerCapture(e.pointerId)) {
+            layer.releasePointerCapture(e.pointerId);
+        }
+    }
 
     useEffect(() => {
         function rectsIntersect(a, b) {
@@ -69,8 +115,14 @@ export default function SingleLayer() {
             <div className="timeline">
                 <div className="layers">
                     <div className="timeline-nav" />
-                    <div className="layer layer-yellow-uncropped">
-                        <div ref={layerYellowRef} className="layer layer-yellow" />
+                    <div ref={layerUncroppedRef} className="layer layer-yellow-uncropped">
+                        <div
+                            ref={layerYellowRef}
+                            className="layer layer-yellow"
+                            onPointerDown={handlePointerDown}
+                            onPointerMove={handlePointerMove}
+                            onPointerUp={handlePointerUp}
+                        />
                     </div>
                 </div>
 
