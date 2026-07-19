@@ -2,11 +2,9 @@ import "../styles/PageTemplate.css";
 import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LottiePlayer from "./LottiePlayer";
-import {
-  IconArrowBarToDown,
-  IconArrowNarrowRight,
-  IconDownload,
-} from "@tabler/icons-react";
+import smallDownload from "../assets/animations/small-download.json";
+import rightArrow from "../assets/animations/right-arrow.json";
+import bigDownload from "../assets/animations/big-download.json";
 import Navbar from "./Navbar";
 
 // Turns `word` into <code>word</code> and *word* into <em>word</em> within a paragraph string
@@ -77,11 +75,11 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
           <div className="buttons">
             <button className="btn btn-primary">
               <span>Demo</span>
-              <IconArrowBarToDown size={24} stroke={1.5} color="black" />
+              <LottiePlayer animationData={smallDownload} playOnHover={true} hoverParent={true} className="lottie lottie-24" />
             </button>
             <button className="btn btn-outline" type="button" onClick={() => navigate(`/${nextPage.slug}`)}>
               <span>{nextPage.label}</span>
-              <IconArrowNarrowRight size={24} stroke={1.5} color="white" />
+              <LottiePlayer animationData={rightArrow} playOnHover={true} hoverParent={true} className="lottie lottie-24" />
             </button>
           </div>
         </section>
@@ -121,7 +119,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
 
           <div className="cards">
             <a className="card card-download" href={download.href} download>
-              <IconDownload width={70} height={76} stroke={1.25} color="white" preserveAspectRatio="none" />
+              <LottiePlayer animationData={bigDownload} playOnHover={true} hoverParent={true} className="lottie lottie-70x76" />
               <div className="card-download-text">
                 <span className="card-title">{download.label}</span>
                 <span className="card-subtitle">{download.sizeLabel}</span>

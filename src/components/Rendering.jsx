@@ -1,8 +1,6 @@
 import "../styles/PageTemplate.css";
-import {
-  IconArrowBackUp,
-} from "@tabler/icons-react";
 import LottiePlayer from "./LottiePlayer";
+import rightArrow from "../assets/animations/right-arrow.json";
 import Navbar from "./Navbar";
 import {useEffect, useRef} from "react";
 import { useNavigate } from "react-router-dom";
@@ -64,7 +62,7 @@ export default function Rendering({ title, blocks, accent, animation }) {
           <div className="buttons">
             <button className="btn btn-outline" type="button" onClick={() => navigate(`/getting-started`)}>
               <span>Restart</span>
-              <IconArrowBackUp size={24} stroke={1.5} color="white" />
+              <LottiePlayer animationData={rightArrow} playOnHover={true} hoverParent={true} className="lottie lottie-24" />
             </button>
           </div>
         </section>

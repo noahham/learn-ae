@@ -188,6 +188,32 @@ body {
     stroke: #fff;
 }
 
+/* Lottie containers used in place of inline SVGs */
+.lottie {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.lottie-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.lottie-70x76 {
+    width: 70px;
+    height: 76px;
+}
+
+/* Mirror the svg transition/color rules when using lottie */
+.btn-primary .lottie svg {
+    transition: all 350ms;
+}
+
+.btn-primary:hover .lottie svg {
+    stroke: #fff;
+    fill: #fff;
+}
+
 .btn-outline {
     background: transparent;
     color: #fff;
@@ -314,7 +340,7 @@ code {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
 }
 
 .card-title {
