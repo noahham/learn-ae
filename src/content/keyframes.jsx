@@ -1,6 +1,7 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import keyframesAnim from "../assets/animations/keyframing.json";
+import LinearKeyframes from "../components/LinearKeyframes.jsx";
 
 
 const keyframesContent = {
@@ -33,9 +34,8 @@ const keyframesContent = {
           "the result you imagine. It’s called keyframing, and I’ll explain how it works.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "ANIMATION two keyframes with a mini playhead and an animation above them",
+      type: "component",
+      node: <LinearKeyframes />,
     },
     {
       type: "paragraph",
@@ -91,11 +91,6 @@ const keyframesContent = {
       text: "You can tell if you’re hovering a keyframe when the open diamond is filled and blue. " +
           "While hovering a keyframe, change the value of the property, then hit play. Notice how " +
           "the value changes as the playhead passes between the keyframes?",
-    },
-    {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "BLACK BOX playhead scrubbing through keyframe’s positional animation",
     },
     {
       type: "paragraph",

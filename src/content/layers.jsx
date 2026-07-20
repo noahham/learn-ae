@@ -41,7 +41,6 @@ const layersContent = {
     },
     {
       type: "component",
-      // src: diagramOne,   // uncomment once you import a real image above
       node: <MultiLayer />,
     },
     {
@@ -59,7 +58,6 @@ const layersContent = {
     },
     {
       type: "component",
-      // src: diagramOne,   // uncomment once you import a real image above
       node: <SingleLayer />,
     },
     {
