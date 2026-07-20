@@ -1,0 +1,102 @@
+.linear-keyframes-card {
+    --shape-outline: rgba(255, 255, 255, 0.10);
+    display: flex;
+    width: 644px;
+    padding: clamp(20px, 5vw, 40px) 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    border-radius: 8px;
+    border: 1px solid var(--shape-outline);
+    background: #1B1D31;
+}
+
+.linear-viewfinder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 506px;
+    height: 239px;
+    border-radius: 8px;
+    border: 1px solid #313345;
+    background: #0C0E23;
+}
+
+.linear-dashed-line {
+    margin: auto;
+    width: 385px;
+    height: 0;
+    border-top: 1px dotted rgba(255, 255, 255, 0.50);
+}
+
+.linear-red-circle {
+    position: absolute;
+    left: 33px;
+    top: 94px;
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background: #E3170A;
+    animation: circleAnimate 3.5s steps(1) infinite;
+}
+
+@keyframes circleAnimate {
+    0% {transform: translateX(0);}
+    9% {transform: translateX(38px);}
+    18% {transform: translateX(76px);}
+    27% {transform: translateX(114px);}
+    36% {transform: translateX(152px);}
+    45% {transform: translateX(190px);}
+    55% {transform: translateX(228px);}
+    64% {transform: translateX(266px);}
+    73% {transform: translateX(304px);}
+    82% {transform: translateX(342px);}
+    91% {transform: translateX(380px);}
+}
+
+.linear-timeline {
+    position: relative;
+    display: flex;
+    width: 506px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.linear-timeline-track {
+    align-self: stretch;
+    height: 47px;
+    border-radius: 8px;
+    border: 1px solid var(--shape-outline);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.linear-timeline-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    margin: 0 12px;
+}
+
+.linear-tick {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.linear-keyframe {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.linear-playhead {
+    fill: #FFF;
+    position: absolute;
+    left: 3px;
+    top: 0;
+    width: 52px;
+    animation: linearPlayheadScroll 3.5s steps(1) infinite;
+}
