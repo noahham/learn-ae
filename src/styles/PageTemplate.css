@@ -12,13 +12,7 @@
     --card-span-margin: 0px;
 }
 
-::selection {
-    background-color: rgba(255, 255, 255, 0.125);;
-}
-
-html {
-    background-color: var(--bg) !important;
-}
+::selection { background-color: rgba(255, 255, 255, 0.125); }
 
 body {
     margin: 0;
@@ -188,6 +182,18 @@ body {
     stroke: #fff;
 }
 
+/* Force Lottie-generated SVG elements to follow the button color state.
+   Lottie often inlines fill/stroke attributes, so we target inner shapes and
+   use !important to override inlined values. */
+.btn-primary .lottie svg * {
+    stroke: #000 !important;
+    transition: stroke 100ms;
+}
+
+.btn-primary:hover .lottie svg * {
+    stroke: #fff !important;
+}
+
 /* Lottie containers used in place of inline SVGs */
 .lottie {
     display: inline-block;
@@ -202,16 +208,6 @@ body {
 .lottie-70x76 {
     width: 70px;
     height: 76px;
-}
-
-/* Mirror the svg transition/color rules when using lottie */
-.btn-primary .lottie svg {
-    transition: all 350ms;
-}
-
-.btn-primary:hover .lottie svg {
-    stroke: #fff;
-    fill: #fff;
 }
 
 .btn-outline {

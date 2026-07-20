@@ -75,7 +75,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
           <div className="buttons">
             <button className="btn btn-primary">
               <span>Demo</span>
-              <LottiePlayer animationData={smallDownload} playOnHover={true} hoverParent={true} className="lottie lottie-24" />
+              <LottiePlayer animationData={smallDownload} playOnHover={true} hoverParent={true} className="lottie lottie-24 swap-color" />
             </button>
             <button className="btn btn-outline" type="button" onClick={() => navigate(`/${nextPage.slug}`)}>
               <span>{nextPage.label}</span>
