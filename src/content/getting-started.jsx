@@ -1,6 +1,8 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import gettingStartedAnim from "../assets/animations/getting-started.json";
+import Hotkey from "../components/Hotkey";
+import HotkeysGroup from "../components/HotkeysGroup";
 
 const gettingStartedContent = {
   title: "THE START",
@@ -20,10 +22,10 @@ const gettingStartedContent = {
     {
       type: "paragraph",
       text: "Starting is always the hardest part. After struggling through learning After Effects " +
-          "(or AE) throughout the past few years, I’ve decided to create the resource that I wish I " +
+          "(or AE) throughout the past few years, I've decided to create the resource that I wish I " +
           "had when I had started. This guide will give you a starting point to be able to follow " +
-          "more complex tutorials. According to the 80/20 rule, you’ll do 80% of your work in AE " +
-          "with only 20% of the features. I’m going to teach you how to use most of that 20% at a " +
+          "more complex tutorials. According to the 80/20 rule, you'll do 80% of your work in AE " +
+          "with only 20% of the features. I'm going to teach you how to use most of that 20% at a " +
           "very basic level.",
     },
     {
