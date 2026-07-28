@@ -26,7 +26,7 @@ const renderingContent = {
     {
       type: "image",
       // src: diagramOne,   // uncomment once you import a real image above
-      alt: "TABLE",
+      alt: "Screenshot of menu button",
     },
     {
       type: "paragraph",
@@ -36,9 +36,13 @@ const renderingContent = {
           " switch tabs to the `Render Queue`.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "Screenshot of menu button",
+      type: "table",
+      headers: ["Resolution", "Minimum", "Excellent"],
+      rows: [
+        ["SD (720p)", "4 Mbps", "12 Mbps"],
+        ["HD (1080p)", "8 Mbps", "30 Mbps"],
+        ["4K (3840p)", "30 Mbps", "80 Mbps"],
+      ],
     },
     {
       type: "paragraph",
@@ -59,10 +63,15 @@ const renderingContent = {
           "point for bitrates.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "TABLE",
-    },{
+      type: "table",
+      headers: ["Resolution", "Minimum", "Excellent"],
+      rows: [
+        ["SD (720p)", "CRF 28", "CRF 19"],
+        ["HD (1080p)", "CRF 27", "CRF 18"],
+        ["4K (3840p)", "CRF 29", "CRF 18"],
+      ],
+    },
+    {
       type: "paragraph",
       text: "Once you have your `Target Bitrate` set, use the `Output To` option to decide where to " +
           "save your video and hit `Render` in the top right.",

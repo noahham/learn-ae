@@ -289,6 +289,59 @@ code {
     letter-spacing: 1%;
 }
 
+.table-wrap {
+    display: flex;
+    justify-content: center;
+    padding: clamp(20px, 5vw, 40px) 0;
+}
+
+.table-scroll {
+    max-width: 644px;
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.data-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-family: var(--font-body), system-ui;
+}
+
+.data-table th:nth-child(1),
+.data-table td:nth-child(1) {
+    width: 30%;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2),
+.data-table th:nth-child(3),
+.data-table td:nth-child(3) {
+    width: 35%;
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+}
+
+.data-table th {
+    background: var(--card-bg);
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;

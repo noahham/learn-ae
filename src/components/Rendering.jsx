@@ -97,6 +97,26 @@ export default function Rendering({ title, blocks, accent, animation }) {
                 </div>
               );
             }
+            if (block.type === "table") {
+              return (
+                  <div key={i} className="table-wrap">
+                    <div className="table-scroll">
+                      <table className="data-table">
+                        <thead>
+                        <tr>{block.headers.map((h, hi) => <th key={hi}>{h}</th>)}</tr>
+                        </thead>
+                        <tbody>
+                        {block.rows.map((row, ri) => (
+                            <tr key={ri}>
+                              {row.map((cell, ci) => <td key={ci}>{cell}</td>)}
+                            </tr>
+                        ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              );
+            }
             return null;
           })}
 
