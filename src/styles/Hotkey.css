@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --bg: #0c0e23;
+    --card-bg: #1b1d31;
+    --accent: #910ddd;
+    --border: rgba(255, 255, 255, 0.1);
+    --font-display: "Costaline", -apple-system, Roboto, Helvetica, sans-serif;
+    --font-body: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+    --card-next-offset: 0px;
+    --card-span-margin: 0px;
+}
+
 .hotkey {
     display: inline-flex;
     align-items: center;
@@ -7,15 +21,14 @@
 
 .hotkey-key {
     display: flex;
-    height: 75px;
     min-width: 75px;
-    padding: 0 24px;
+    padding: 20px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.20);
-    background: rgba(0, 0, 0, 0.30);
+    background: var(--card-bg);
     overflow: hidden;
     position: relative;
 }
@@ -25,7 +38,7 @@
     color: #FFF;
     text-align: center;
     font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     line-height: normal;
     position: relative;
@@ -35,8 +48,8 @@
     color: #FFF;
     text-align: center;
     font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
     line-height: normal;
     position: relative;
 }

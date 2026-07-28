@@ -1,8 +1,6 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import gettingStartedAnim from "../assets/animations/getting-started.json";
-import Hotkey from "../components/Hotkey";
-import HotkeysGroup from "../components/HotkeysGroup";
 
 const gettingStartedContent = {
   title: "THE START",

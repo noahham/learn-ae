@@ -1,6 +1,7 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import shapesAnim from "../assets/animations/shapes.json";
+import HotkeysGroup from "../components/HotkeysGroup.jsx";
 
 
 const shapesContent = {
@@ -49,14 +50,15 @@ const shapesContent = {
       text: "This panel is on the left in the panel stack, so you’ll have to click on it to expand " +
           "it. Under `Shape Properties`, you’ll find a lot of interesting options. For example, a " +
           "star can be made into a triangle by changing the amount of points to three. To create the" +
-          " shape, click and drag across the `Composition Panel`. You can also hold Shift to create " +
+          " shape, click and drag across the `Composition Panel`. You can also hold `Shift` to create " +
           "a shape with the same width and height. Feel free to explore the rest of that `Properties" +
           " Panel` as well, it’s extremely useful.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "HOTKEY",
+      type: "component",
+      node: <HotkeysGroup hotkeys={[
+        { letter: "Shift", label: "Create uniform size." },
+      ]} />,
     },
     {
       type: "paragraph",
@@ -70,9 +72,10 @@ const shapesContent = {
           "you need them to curve the path.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "HOTKEY",
+      type: "component",
+      node: <HotkeysGroup hotkeys={[
+        { letter: "Alt", label: "Split curve handles." },
+      ]} />,
     },
 
 
@@ -110,9 +113,10 @@ const shapesContent = {
           "the Mask Path which can be animated (see Keyframes).",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "HOTKEY",
+      type: "component",
+      node: <HotkeysGroup hotkeys={[
+        { letter: "M", label: "Open mask settings." },
+      ]} />,
     },
   ],
 };

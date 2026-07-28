@@ -2,6 +2,8 @@
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 // import effectsAnim from "../assets/animations/effects.json";
 
+import HotkeysGroup from "../components/HotkeysGroup.jsx";
+
 const effectsContent = {
   title: "EFFECTS",
   accent: "#FFC43D",
@@ -74,9 +76,14 @@ const effectsContent = {
           " the same key again to collapse it all.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "HOTKEY",
+      type: "component",
+      node: <HotkeysGroup hotkeys={[
+        { letter: "P", label: "Open Position setting." },
+        { letter: "A", label: "Open Anchor Point setting." },
+        { letter: "R", label: "Open Rotation setting." },
+        { letter: "T", label: "Open Opacity setting." },
+        { letter: "S", label: "Open Scale setting." },
+      ]} />,
     },
   ],
 };

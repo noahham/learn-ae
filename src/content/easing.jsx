@@ -1,6 +1,7 @@
 // import diagramOne from "../assets/images/keyframes/diagram-1.png";
 // import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import easingAnim from "../assets/animations/easing.json";
+import HotkeysGroup from "../components/HotkeysGroup";
 
 const easingContent = {
   title: "EASING",
@@ -70,9 +71,10 @@ const easingContent = {
           "highlight them, then apply easy easing to them.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "HOTKEY",
+      type: "component",
+      node: <HotkeysGroup hotkeys={[
+        { letter: "F9", label: "Apply Easy Ease." },
+      ]} />,
     },
     {
       type: "paragraph",

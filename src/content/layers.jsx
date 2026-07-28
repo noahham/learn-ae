@@ -3,6 +3,7 @@
 import layersAnim from "../assets/animations/layers.json";
 import MultiLayer from "../components/MultiLayer.jsx";
 import SingleLayer from "../components/SingleLayer.jsx";
+import HotkeysGroup from "../components/HotkeysGroup";
 
 
 const layersContent = {
@@ -47,23 +48,29 @@ const layersContent = {
       type: "paragraph",
       text: "As you can see, each layer is only visible when the playhead (the blue thing with the " +
           "notch at the top) touches it. Just like the stack of papers, the layers on the top are " +
-          "shown above the layers below it. Try grabbing the playhead by the top and scrubbing " +
-          "through the composition yourself.",
+          "shown above the layers below it. You can adjust their ordering and timings with the " +
+          "hotkeys below.",
+    },
+    {
+      type: "component",
+      node: <HotkeysGroup hotkeys={[
+        { letter: "[", label: "Move start to playhead." },
+        { letter: "]", label: "Move end to playhead." },
+        { letter: "Alt + [", label: "Trim start to playhead." },
+        { letter: "Alt + ]", label: "Trim end to playhead." },
+        { letter: "Ctrl + [", label: "Move layer up." },
+        { letter: "Ctrl + ]", label: "Move layer down." },
+      ]} />,
     },
     {
       type: "paragraph",
-      text: "Manipulating layers is pretty simple. On top of being able to trim, move, and reorder " +
+      text: "As you can tell, manipulating layers is pretty simple. On top of being able to trim, move, and reorder " +
           "them, videos particularly are kind of weird. You can actually slide the unused part of " +
           "the video in order to change which part of the video is actually shown for the layer.",
     },
     {
       type: "component",
       node: <SingleLayer />,
-    },
-    {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "HOTKEYS",
     },
     {
       type: "paragraph",

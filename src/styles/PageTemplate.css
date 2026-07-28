@@ -357,7 +357,7 @@ code {
     flex: 2 1 320px;
     background: var(--accent);
     padding: 0 24px;
-    transition: background-color 300ms;
+    transition: background-color 400ms;
 }
 
 
@@ -376,8 +376,8 @@ code {
     text-align: left;
     margin-left: 0;
     width: fit-content;
-    white-space: nowrap;   /* 👈 add this line */
-    transition: margin-left 600ms ease;
+    white-space: nowrap;
+    transition: margin-left 650ms ease;
 }
 
 .card-heading {
@@ -388,7 +388,7 @@ code {
     font-weight: 700;
     text-align: left;
     margin-left: 0;
-    transition: margin-left 550ms ease;
+    transition: margin-left 600ms ease;
     width: fit-content;
 }
 
