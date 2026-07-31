@@ -1,5 +1,3 @@
-// import diagramOne from "../assets/images/keyframes/diagram-1.png";
-// import diagramTwo from "../assets/images/keyframes/diagram-2.png";
 import keyframesAnim from "../assets/animations/keyframing.json";
 import LinearKeyframes from "../components/LinearKeyframes.jsx";
 
@@ -57,7 +55,7 @@ const keyframesContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
+      // src: linearGraph,
       alt: "square falling from the sky",
     },
     {

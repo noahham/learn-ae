@@ -1,5 +1,6 @@
-// import diagramOne from "../assets/images/keyframes/diagram-1.png";
-// import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import linearGraph from "../assets/images/easing/linear-graph.png";
+import easingSpeedGraph from "../assets/images/easing/easing-speed-graph.png";
+import easingValueGraph from "../assets/images/easing/easing-value-graph.png";
 import easingAnim from "../assets/animations/easing.json";
 import HotkeysGroup from "../components/HotkeysGroup";
 
@@ -85,8 +86,8 @@ const easingContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "show pic of graph editor",
+      src: linearGraph,
+      alt: "Graph Editor",
     },
     {
       type: "paragraph",
@@ -106,8 +107,13 @@ const easingContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "smooth motion on value and speed",
+      src: easingValueGraph,
+      alt: "Easing Value Graph",
+    },
+    {
+      type: "image",
+      src: easingSpeedGraph,
+      alt: "Easing Speed Graph",
     },
     {
       type: "paragraph",

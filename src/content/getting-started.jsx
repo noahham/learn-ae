@@ -1,5 +1,5 @@
-// import diagramOne from "../assets/images/keyframes/diagram-1.png";
-// import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import missingFootage from "../assets/images/getting-started/missing-footage.png";
+import relinkFootage from "../assets/images/getting-started/relink-footage.png";
 import gettingStartedAnim from "../assets/animations/getting-started.json";
 
 const gettingStartedContent = {
@@ -85,8 +85,8 @@ const gettingStartedContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "missing footage",
+      src: missingFootage,
+      alt: "Missing Footage",
     },
     {
       type: "paragraph",
@@ -96,8 +96,8 @@ const gettingStartedContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "project panel",
+      src: relinkFootage,
+      alt: "Relink Footage",
     },
 
 

@@ -1,7 +1,6 @@
-// import diagramOne from "../assets/images/keyframes/diagram-1.png";
-// import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import exportOption from "../assets/images/rendering/export.png";
+import renderQueue from "../assets/images/rendering/render-queue.png";
 import renderingAnim from "../assets/animations/rendering.json";
-
 
 const renderingContent = {
   title: "RENDERING",
@@ -25,7 +24,7 @@ const renderingContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
+      src: exportOption,
       alt: "Screenshot of menu button",
     },
     {
@@ -36,13 +35,9 @@ const renderingContent = {
           " switch tabs to the `Render Queue`.",
     },
     {
-      type: "table",
-      headers: ["Resolution", "Minimum", "Excellent"],
-      rows: [
-        ["SD (720p)", "4 Mbps", "12 Mbps"],
-        ["HD (1080p)", "8 Mbps", "30 Mbps"],
-        ["4K (3840p)", "30 Mbps", "80 Mbps"],
-      ],
+      type: "image",
+      src: renderQueue,
+      alt: "Screenshot of menu button",
     },
     {
       type: "paragraph",
@@ -66,9 +61,9 @@ const renderingContent = {
       type: "table",
       headers: ["Resolution", "Minimum", "Excellent"],
       rows: [
-        ["SD (720p)", "CRF 28", "CRF 19"],
-        ["HD (1080p)", "CRF 27", "CRF 18"],
-        ["4K (3840p)", "CRF 29", "CRF 18"],
+        ["SD (720p)", "4 Mbps", "12 Mbps"],
+        ["HD (1080p)", "8 Mbps", "30 Mbps"],
+        ["4K (3840p)", "30 Mbps", "80 Mbps"],
       ],
     },
     {
@@ -89,9 +84,13 @@ const renderingContent = {
           "higher quality, higher means worse quality.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "TABLE",
+      type: "table",
+      headers: ["Resolution", "Minimum", "Excellent"],
+      rows: [
+        ["SD (720p)", "CRF 28", "CRF 19"],
+        ["HD (1080p)", "CRF 27", "CRF 18"],
+        ["4K (3840p)", "CRF 29", "CRF 18"],
+      ],
     },
     {
       type: "paragraph",

@@ -1,5 +1,4 @@
-// import diagramOne from "../assets/images/keyframes/diagram-1.png";
-// import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import blendingModes from "../assets/images/blending/blending-modes.png";
 import blendingAnim from "../assets/animations/blending.json";
 
 const blendingContent = {
@@ -39,8 +38,8 @@ const blendingContent = {
     },
     {
       type: "image",
-      // src: diagramOne,
-      alt: "mode in layers panel",
+      src: blendingModes,
+      alt: "Blending Modes",
     },
     {
       type: "paragraph",

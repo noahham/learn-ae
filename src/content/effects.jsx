@@ -1,5 +1,6 @@
-// import diagramOne from "../assets/images/keyframes/diagram-1.png";
-// import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import effectsAndPresets from "../assets/images/effects/effects-and-presets.png";
+import effectsControls from "../assets/images/effects/effects-controls.png";
+
 // import effectsAnim from "../assets/animations/effects.json";
 
 import HotkeysGroup from "../components/HotkeysGroup.jsx";
@@ -31,7 +32,7 @@ const effectsContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
+      src: effectsAndPresets,
       alt: "Effects and presets panel",
     },
 
@@ -46,7 +47,7 @@ const effectsContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
+      src: effectsControls,
       alt: "Effects controls panel",
     },
     {

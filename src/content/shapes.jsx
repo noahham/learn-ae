@@ -1,5 +1,4 @@
-// import diagramOne from "../assets/images/keyframes/diagram-1.png";
-// import diagramTwo from "../assets/images/keyframes/diagram-2.png";
+import propertiesPanel from "../assets/images/shapes/properties.png";
 import shapesAnim from "../assets/animations/shapes.json";
 import HotkeysGroup from "../components/HotkeysGroup.jsx";
 
@@ -42,7 +41,7 @@ const shapesContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
+      src: propertiesPanel,
       alt: "properties panel",
     },
     {
