@@ -259,13 +259,20 @@ code {
     padding: clamp(20px, 5vw, 40px) 0;
 }
 
+.image-wrap .placeholder.image {
+    aspect-ratio: 644 / 390;
+}
+
 .image {
+    display: flex;
     width: 100%;
     max-width: 644px;
-    aspect-ratio: 644 / 390;
+    box-sizing: border-box;
+    padding: 48px;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--card-bg);
+    overflow: hidden;
 }
 
 .block-component {
@@ -477,8 +484,10 @@ code {
 }
 
 .image-real {
-    object-fit: cover;
+    width: 100%;
+    height: auto;
     display: block;
+    border-radius: 8px;
 }
 
 .card-next {
