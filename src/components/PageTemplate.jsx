@@ -100,6 +100,17 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
                 </div>
               );
             }
+            if (block.type === "animation") {
+              return (
+                  <div key={i} className="image-wrap">
+                    {block.src ? (
+                        <LottiePlayer animationData={block.src} loop className="image image-real" />
+                    ) : (
+                        <div className="placeholder image" />
+                    )}
+                  </div>
+              );
+            }
             if (block.type === "header") {
               return (
                 <div key={i} className="section-header">

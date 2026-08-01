@@ -1,4 +1,5 @@
 import keyframesAnim from "../assets/animations/keyframing.json";
+import fallingCube from "../assets/animations/falling-cube.json";
 import LinearKeyframes from "../components/LinearKeyframes.jsx";
 
 
@@ -54,9 +55,8 @@ const keyframesContent = {
           "talk about this animation of a square falling from the sky.",
     },
     {
-      type: "image",
-      // src: linearGraph,
-      alt: "square falling from the sky",
+      type: "animation",
+      src: fallingCube,
     },
     {
       type: "paragraph",
