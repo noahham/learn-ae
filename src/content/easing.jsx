@@ -1,3 +1,4 @@
+import easingCurve from "../assets/images/easing/easing-curve.png";
 import linearGraph from "../assets/images/easing/linear-graph.png";
 import easingSpeedGraph from "../assets/images/easing/easing-speed-graph.png";
 import easingValueGraph from "../assets/images/easing/easing-value-graph.png";
@@ -41,8 +42,8 @@ const easingContent = {
     },
     {
       type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "basic ease in/out curve",
+      src: easingCurve,
+      alt: "Ease In/Out Curve",
     },
     {
       type: "paragraph",
