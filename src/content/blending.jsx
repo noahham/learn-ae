@@ -1,5 +1,12 @@
 import blendingModes from "../assets/images/blending/blending-modes.png";
 import blendingAnim from "../assets/animations/blending.json";
+import TripleImage from "../components/TripleImage.jsx";
+import blend1 from "../assets/images/blending/blend-1.png";
+import blend2 from "../assets/images/blending/blend-2.png";
+import blend3 from "../assets/images/blending/blend-3.png";
+import adjust1 from "../assets/images/shapes/mask-1.png";
+import adjust2 from "../assets/images/shapes/mask-2.png";
+import adjust3 from "../assets/images/blending/adjustment.png";
 
 const blendingContent = {
   title: "BLENDING",
@@ -49,9 +56,13 @@ const blendingContent = {
           " blending mode to it. ",
     },
     {
-      type: "image",
-      // src: diagramOne,
-      alt: "images of no vfx, vfx unblended, then comped over",
+      type: "component",
+      node: (
+        <TripleImage
+          images={[blend1, blend2, blend3]}
+          alts={["Starting Footage", "Overlay", "Footage with Overlay"]}
+        />
+      ),
     },
     {
       type: "paragraph",
@@ -69,9 +80,13 @@ const blendingContent = {
           " blur to every layer that’s visible under the star.",
     },
     {
-      type: "image",
-      // src: diagramOne,
-      alt: "photo example of the star",
+      type: "component",
+      node: (
+        <TripleImage
+          images={[adjust1, adjust2, adjust3]}
+          alts={["Adjustment Alpha", "Background", "Background with Adjustment"]}
+        />
+      ),
     },
     {
       type: "paragraph",

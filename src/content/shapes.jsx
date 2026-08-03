@@ -1,6 +1,10 @@
 import propertiesPanel from "../assets/images/shapes/properties.png";
 import shapesAnim from "../assets/animations/shapes.json";
 import HotkeysGroup from "../components/HotkeysGroup.jsx";
+import TripleImage from "../components/TripleImage.jsx";
+import mask1 from "../assets/images/shapes/mask-1.png";
+import mask2 from "../assets/images/shapes/mask-2.png";
+import mask3 from "../assets/images/shapes/mask-3.png";
 
 
 const shapesContent = {
@@ -87,9 +91,13 @@ const shapesContent = {
           "the star.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "masked star thing",
+      type: "component",
+      node: (
+        <TripleImage
+          images={[mask1, mask2, mask3]}
+          alts={["Mask Alpha", "Background", "Background with Mask"]}
+        />
+      ),
     },
 
 
