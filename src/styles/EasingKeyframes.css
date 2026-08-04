@@ -1,0 +1,140 @@
+.easing-keyframes-card {
+    --shape-outline: rgba(255, 255, 255, 0.10);
+    display: flex;
+    width: 644px;
+    padding: clamp(20px, 5vw, 40px) 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    border-radius: 8px;
+    border: 1px solid var(--shape-outline);
+    background: #1B1D31;
+}
+
+.easing-viewfinder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 506px;
+    height: 239px;
+    border-radius: 8px;
+    border: 1px solid #313345;
+    background: #0C0E23;
+}
+
+.easing-dashed-line {
+    margin: auto;
+    width: 385px;
+    height: 0;
+    border-top: 1px dotted rgba(255, 255, 255, 0.50);
+}
+
+.easing-red-circle {
+    position: absolute;
+    left: 33px;
+    top: 94px;
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background: #E3170A;
+    animation: easingCircleAnimate 3.5s steps(1) infinite;
+}
+
+@keyframes easingCircleAnimate {
+    0% {transform: translateX(0);}
+    9% {transform: translateX(4px);}
+    18% {transform: translateX(18px);}
+    27% {transform: translateX(48px);}
+    36% {transform: translateX(103px);}
+    45% {transform: translateX(189px);}
+    55% {transform: translateX(276px);}
+    64% {transform: translateX(332px);}
+    73% {transform: translateX(362px);}
+    82% {transform: translateX(376px);}
+    91% {transform: translateX(380px);}
+}
+
+.easing-timeline {
+    position: relative;
+    display: flex;
+    width: 506px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.easing-timeline-track {
+    align-self: stretch;
+    height: 47px;
+    border-radius: 8px;
+    border: 1px solid var(--shape-outline);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.easing-timeline-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    margin: 0 12px;
+}
+
+.easing-tick {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.50);
+}
+
+.easing-keyframe {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.easing-playhead {
+    fill: #FFF;
+    position: absolute;
+    left: 3px;
+    top: 0;
+    width: 52px;
+    animation: easingPlayheadScroll 3.5s steps(1) infinite;
+}
+
+.progress-holder {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 4px;
+}
+
+.easing-progress-card {
+    display: flex;
+    gap: 6px;
+    width: 170px;
+    height: 96px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border-radius: 8px;
+    border: 1px solid #313345;
+    background: #0C0E23;
+}
+
+.easing-progress-percentage {
+    color: #FFF;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.easing-progress-label {
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+
+}

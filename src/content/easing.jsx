@@ -4,6 +4,7 @@ import easingSpeedGraph from "../assets/images/easing/easing-speed-graph.png";
 import easingValueGraph from "../assets/images/easing/easing-value-graph.png";
 import easingAnim from "../assets/animations/easing.json";
 import HotkeysGroup from "../components/HotkeysGroup";
+import EasingKeyframes from "../components/EasingKeyframes.jsx";
 
 const easingContent = {
   title: "EASING",
@@ -52,9 +53,8 @@ const easingContent = {
           " red circle would be exactly halfway between the green and yellow squares.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "Red circle moving between a green and yellow square",
+      type: "component",
+      node: <EasingKeyframes/>,
     },
     {
       type: "paragraph",
