@@ -1,0 +1,58 @@
+.external-link {
+    display: flex;
+    width: 392px;
+    padding: 20px 40px;
+    align-items: center;
+    gap: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    height: 87px;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: background-color 300ms;
+}
+
+.external-link:hover {
+    background: color-mix(in srgb, var(--card-bg), white 5%);
+}
+
+.external-link-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 38px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.external-link-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    position: relative;
+}
+
+.external-link-title {
+    color: #FFF;
+    font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+}
+
+.external-link-subtext {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+}

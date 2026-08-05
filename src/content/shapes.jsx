@@ -5,6 +5,8 @@ import TripleImage from "../components/TripleImage.jsx";
 import mask1 from "../assets/images/shapes/mask-1.png";
 import mask2 from "../assets/images/shapes/mask-2.png";
 import mask3 from "../assets/images/shapes/mask-3.png";
+import methodFavicon from "../assets/images/shapes/method.png"
+import ExternalLink from "../components/ExternalLink.jsx";
 
 
 const shapesContent = {
@@ -70,9 +72,16 @@ const shapesContent = {
           "create your own points and curves (you could use the Pen Tool to make *any shape*). It’s " +
           "really hard to explain how to use this tool by watching a video or reading a guide, you " +
           "kind of have to just try it out yourself. One of the best resources that taught me how to" +
-          " use it properly was the Bezier Game from method.ac. It’s really fun to try to draw these" +
-          " random shapes and you pick it up pretty fast. Pay attention to the hotkeys here though, " +
-          "you need them to curve the path.",
+          " use it properly was the Bezier Game from Method of Action."
+    },
+    {
+      type: "component",
+      node: <ExternalLink icon={methodFavicon} title="The Bézier Game" subtext="bezier.method.ac" href="https://bezier.method.ac/" />
+    },
+    {
+      type: "paragraph",
+      text: "It’s really fun to try to draw these random shapes and you pick it up pretty fast. Pay " +
+          "attention to the hotkeys here though, you need them to curve the path."
     },
     {
       type: "component",
@@ -99,8 +108,6 @@ const shapesContent = {
         />
       ),
     },
-
-
     { type: "header", text: "Masking in After Effects" },
     {
       type: "paragraph",

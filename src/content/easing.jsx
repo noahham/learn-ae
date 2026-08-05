@@ -2,9 +2,12 @@ import easingCurve from "../assets/images/easing/easing-curve.png";
 import linearGraph from "../assets/images/easing/linear-graph.png";
 import easingSpeedGraph from "../assets/images/easing/easing-speed-graph.png";
 import easingValueGraph from "../assets/images/easing/easing-value-graph.png";
+import flowFavicon from "../assets/images/easing/flow.png"
 import easingAnim from "../assets/animations/easing.json";
+
 import HotkeysGroup from "../components/HotkeysGroup";
 import EasingKeyframes from "../components/EasingKeyframes.jsx";
+import ExternalLink from "../components/ExternalLink.jsx";
 
 const easingContent = {
   title: "EASING",
@@ -131,9 +134,8 @@ const easingContent = {
           "easing. It won’t do all the work for you, but it makes 70% of it a lot easier.",
     },
     {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "link and pic to Flow",
+      type: "component",
+      node: <ExternalLink icon={flowFavicon} title="Flow" subtext="aescripts.com/flow" href="https://aescripts.com/flow/" />
     },
   ],
 };
