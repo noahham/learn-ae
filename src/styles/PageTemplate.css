@@ -450,7 +450,7 @@ code {
     font-weight: 700;
     text-align: left;
     margin-left: 0;
-    transition: margin-left 600ms ease;
+    transition: margin-left 650ms ease;
     width: fit-content;
 }
 
