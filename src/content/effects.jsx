@@ -1,8 +1,6 @@
 import effectsAndPresets from "../assets/images/effects/effects-and-presets.png";
 import effectsControls from "../assets/images/effects/effects-controls.png";
-
-// import effectsAnim from "../assets/animations/effects.json";
-
+import effectsAnim from "../assets/animations/effects.json";
 import HotkeysGroup from "../components/HotkeysGroup.jsx";
 
 const effectsContent = {
@@ -13,7 +11,7 @@ const effectsContent = {
     sizeLabel: "167mb ZIP File.",
     href: "/downloads/effects-demo.zip",
   },
-  // animation: effectsAnim,
+  animation: effectsAnim,
   nextPage: {
     slug: "keyframes",
     heading: "KEYFRAMES",

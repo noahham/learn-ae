@@ -1,4 +1,4 @@
-import "./TripleImage.css";
+import "../styles/TripleImage.css";
 
 // Renders three images side-by-side. Pass an `images` array prop with up to three
 // imported image modules (e.g. import a from "../assets/..." and pass as images={[a,b,c]}).

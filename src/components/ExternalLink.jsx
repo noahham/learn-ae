@@ -1,4 +1,4 @@
-import "./ExternalLink.css";
+import "../styles/ExternalLink.css";
 
 export default function ExternalLink({ title, subtext, icon, href }) {
     return (
