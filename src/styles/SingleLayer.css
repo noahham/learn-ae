@@ -8,6 +8,7 @@
 .layer-yellow {
     align-self: stretch;
     width: 200px;
+    height: 45px;
     background: var(--accent-yellow);
     cursor: grab;
     touch-action: none;
