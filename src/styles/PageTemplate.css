@@ -4,7 +4,10 @@
 :root {
     --bg: #0c0e23;
     --card-bg: #1b1d31;
-    --accent: #910ddd;
+    --accent-red: #E3170A;
+    --accent-purple: #910ddd;
+    --accent-blue: #177FCE;
+    --accent-yellow: #FFC43D;
     --border: rgba(255, 255, 255, 0.1);
     --font-display: "Costaline", -apple-system, Roboto, Helvetica, sans-serif;
     --font-body: "Inter", -apple-system, Roboto, Helvetica, sans-serif;

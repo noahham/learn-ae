@@ -1,22 +1,22 @@
 .layer-blue {
-    background: #177FCE;
+    background: var(--accent-blue);
     margin-left: calc(506px - 178px);
 }
 
 .layer-purple {
-    background: #910DDD;
+    background: var(--accent-purple);
 }
 
 .layer-red {
     align-self: stretch;
     width: auto;
-    background: #E3170A;
+    background: var(--accent-red);
 }
 
 .purple-square {
     width: 124px;
     height: 124px;
-    background: #910DDD;
+    background: var(--accent-purple);
     flex-shrink: 0;
 }
 
@@ -24,7 +24,7 @@
     width: 124px;
     height: 124px;
     border-radius: 50%;
-    background: #E3170A;
+    background: var(--accent-red);
     flex-shrink: 0;
 }
 
@@ -33,7 +33,7 @@
        same height as the square/circle while keeping all three sides equal */
     width: 143px;
     height: 124px;
-    background: #177FCE;
+    background: var(--accent-blue);
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     flex-shrink: 0;
 }

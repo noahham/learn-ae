@@ -8,14 +8,14 @@
 .layer-yellow {
     align-self: stretch;
     width: 200px;
-    background: #FFC43D;
+    background: var(--accent-yellow);
     cursor: grab;
     touch-action: none;
     transition: background-color 150ms;
 }
 
 .layer-yellow:hover {
-    background-color: color-mix(in srgb, #FFC43D, white 20%);
+    background-color: color-mix(in srgb, var(--accent-yellow), white 20%);
 }
 
 .layer-yellow:active {

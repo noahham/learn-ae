@@ -8,7 +8,7 @@
     padding: 43px 69px;
     border-radius: 8px;
     border: 1px solid var(--shape-outline);
-    background: #1B1D31;
+    background: var(--card-bg);
 }
 
 .viewfinder {
@@ -20,7 +20,7 @@
     height: 239px;
     border-radius: 8px;
     border: 1px solid #313345;
-    background: #0C0E23;
+    background: var(--bg);
     position: relative;
 }
 
