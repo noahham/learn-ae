@@ -32,11 +32,11 @@ const gettingStartedContent = {
           "complex demos will be downloadable project files, but there will also be a few " +
           "interactive animations embedded inside the website.",
     },
-    {
-      type: "image",
-      // src: diagramOne,   // uncomment once you import a real image above
-      alt: "BLACK BOX interactive fun game",
-    },
+    // {
+    //   type: "image",
+    //   // src: diagramOne,   // uncomment once you import a real image above
+    //   alt: "BLACK BOX interactive fun game",
+    // },
     {
       type: "paragraph",
       text: "Opening After Effects for the very first time, you’ll notice a lot of different boxes," +
