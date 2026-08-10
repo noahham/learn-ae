@@ -1,6 +1,6 @@
-import exportOption from "../assets/images/rendering/export.png";
 import renderQueue from "../assets/images/rendering/render-queue.png";
 import renderingAnim from "../assets/animations/rendering.json";
+import Codec from "../components/CodecHolder.jsx";
 
 const renderingContent = {
   title: "RENDERING",
@@ -23,9 +23,29 @@ const renderingContent = {
           "extensions, typical sizes, and the reasons you might pick them.",
     },
     {
-      type: "image",
-      src: exportOption,
-      alt: "Screenshot of menu button",
+      type: "component",
+      node: (
+        <div className="codec-holder">
+          <Codec
+            title="H.264"
+            subtext="~300mb/min"
+            extensions={[".mp4", ".mov", ".mkv"]}
+            description="The compressed universal standard. The right choice when compatibility is the top priority."
+          />
+          <Codec
+            title="AV1"
+            subtext="~125mb/min"
+            extensions={[".mp4", ".webm", ".mkv"]}
+            description="The future of compressed web video. Less widely compatible, but smaller file sizes for the same visual quality."
+          />
+          <Codec
+            title="Apple Prores"
+            subtext="~1000mb/min"
+            extensions={[".mov"]}
+            description="The near-lossless editing standard. Used for renders that still need to be color graded or composited."
+          />
+        </div>
+      ),
     },
     {
       type: "paragraph",
