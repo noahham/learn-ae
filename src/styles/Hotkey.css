@@ -60,6 +60,24 @@
     gap: 24px;
 }
 
+.hotkey-keys {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hotkey-key-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hotkey-plus {
+    color: #FFF;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
 @media (max-width: 480px) {
     .hotkey-key { padding: 18px 12px;}
 }

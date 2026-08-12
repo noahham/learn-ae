@@ -56,10 +56,10 @@ const layersContent = {
       node: <HotkeysGroup hotkeys={[
         { letter: "[", label: "Move start to playhead." },
         { letter: "]", label: "Move end to playhead." },
-        { letter: "Alt + [", label: "Trim start to playhead." },
-        { letter: "Alt + ]", label: "Trim end to playhead." },
-        { letter: "Ctrl + [", label: "Move layer up." },
-        { letter: "Ctrl + ]", label: "Move layer down." },
+        { letter: ["OPT", "["], label: "Trim start to playhead." },
+        { letter: ["OPT", "]"], label: "Trim end to playhead." },
+        { letter: ["CMD", "["], label: "Move layer up." },
+        { letter: ["CMD", "]"], label: "Move layer down." },
       ]} />,
     },
     {
