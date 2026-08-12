@@ -1,5 +1,5 @@
 import Hotkey from "./Hotkey";
-import "../styles/HotkeysGroup.css";
+import "../styles/Hotkey.css";
 
 export default function HotkeysGroup({ hotkeys = [] }) {
   return (

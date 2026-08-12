@@ -38,7 +38,7 @@
     color: #FFF;
     text-align: center;
     font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: clamp(18px, 2vw, 20px);
     font-weight: 600;
     line-height: normal;
     position: relative;
@@ -48,8 +48,18 @@
     color: #FFF;
     text-align: center;
     font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     font-weight: 500;
     line-height: normal;
     position: relative;
+}
+
+.hotkeys-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 480px) {
+    .hotkey-key { padding: 18px 12px;}
 }

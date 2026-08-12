@@ -29,6 +29,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
   const cardNextRef = useRef(null);
   const cardEyebrowRef = useRef(null);
   const cardHeadingRef = useRef(null);
+  const componentRefs = useRef([]);
 
   useEffect(() => {
     const calculateOffset = () => {
@@ -48,12 +49,36 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
       cardHeadingRef.current.style.setProperty("--card-span-margin", `${cardNextWidth - headingWidth - 54}px`);
     };
 
+    const calculateComponentScale = () => {
+      componentRefs.current.forEach((wrapper) => {
+        if (!wrapper) return;
+        const inner = wrapper.firstElementChild;
+        if (!inner) return;
+
+        // Reset first so we measure the component's natural, unscaled size
+        inner.style.transform = "none";
+        const naturalWidth = inner.scrollWidth;
+        const naturalHeight = inner.scrollHeight;
+        const availableWidth = wrapper.clientWidth;
+
+        if (naturalWidth > availableWidth && availableWidth > 0) {
+          const scale = availableWidth / naturalWidth;
+          inner.style.transform = `scale(${scale})`;
+          wrapper.style.height = `${naturalHeight * scale}px`;
+        } else {
+          wrapper.style.height = "auto";
+        }
+      });
+    };
+
     calculateOffset();
     calculateMarginOffsets();
+    calculateComponentScale();
 
     const handleResize = () => {
       calculateOffset();
       calculateMarginOffsets();
+      calculateComponentScale();
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -120,8 +145,12 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
             }
             if (block.type === "component") {
               return (
-                <div key={i} className="block-component">
-                  {block.node}
+                <div
+                  key={i}
+                  className="block-component"
+                  ref={(el) => (componentRefs.current[i] = el)}
+                >
+                  <div className="block-component-inner">{block.node}</div>
                 </div>
               );
             }
