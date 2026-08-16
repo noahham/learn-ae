@@ -7,5 +7,6 @@ export default defineConfig({
   plugins: [react(), svgr()],
   optimizeDeps: {
     exclude: ["update-browserslist-db", "browserslist"]
-  }
+  },
+  assetsInclude: ["**/*.aep"],
 });

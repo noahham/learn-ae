@@ -6,6 +6,8 @@ import smallDownload from "../assets/animations/small-download.json";
 import rightArrow from "../assets/animations/right-arrow.json";
 import bigDownload from "../assets/animations/big-download.json";
 import Navbar from "./Navbar";
+import { useLocation } from "react-router-dom";
+import demos from "../assets/demos";
 
 // Turns `word` into <code>word</code> and *word* into <em>word</em> within a paragraph string
 function renderWithCode(text) {
@@ -24,6 +26,62 @@ function renderWithCode(text) {
 // download: { label, sizeLabel, href }
 // nextPage: { slug, heading, label } -> links to /{slug}
 export default function PageTemplate({ title, blocks, download, nextPage, accent, animation }) {
+  const location = useLocation();
+
+  const handleDownload = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    // derive slug from current location (strip leading slash)
+    const slug = (location.pathname || "").replace(/^\//, "") || "getting-started";
+
+    // Helper to trigger download of a URL with a suggested filename
+    const triggerDownload = (url, filename) => {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    };
+
+    if (slug === "getting-started") {
+      // Zip all demos as demos.zip using JSZip (dynamic import to keep bundle small)
+      try {
+        const JSZip = (await import("jszip")).default;
+        const zip = new JSZip();
+
+        const entries = Object.entries(demos);
+        for (const [name, url] of entries) {
+          try {
+            const res = await fetch(url);
+            if (!res.ok) continue;
+            const blob = await res.blob();
+            zip.file(`${name}.aep`, blob);
+          } catch (err) {
+            // skip individual failures
+          }
+        }
+
+        const content = await zip.generateAsync({ type: "blob" });
+        const objUrl = URL.createObjectURL(content);
+        triggerDownload(objUrl, "demos.zip");
+        // cleanup
+        setTimeout(() => URL.revokeObjectURL(objUrl), 10000);
+      } catch (err) {
+        // fallback to original href if zip fails
+        window.location.href = download.href;
+      }
+    } else {
+      // try to download the single page demo .aep from demos mapping
+      const demoUrl = demos[slug];
+      if (demoUrl) {
+        triggerDownload(demoUrl, `${slug}.aep`);
+      } else {
+        // fallback to original href if demo not found
+        window.location.href = download.href;
+      }
+    }
+  };
+
   const navigate = useNavigate();
   const cardNextHolderRef = useRef(null);
   const cardNextRef = useRef(null);
@@ -98,7 +156,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
           )}
           <h1 className="title">{title}</h1>
           <div className="buttons">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={handleDownload}>
               <span>Demo</span>
               <LottiePlayer animationData={smallDownload} playOnHover={true} hoverParent={true} className="lottie lottie-24 swap-color" />
             </button>
@@ -158,7 +216,11 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
           })}
 
           <div className="cards">
-            <a className="card card-download" href={download.href} download>
+            <a
+              className="card card-download"
+              href={download.href}
+              onClick={handleDownload}
+            >
               <LottiePlayer animationData={bigDownload} playOnHover={true} hoverParent={true} className="lottie lottie-70x76" />
               <div className="card-download-text">
                 <span className="card-title">{download.label}</span>
