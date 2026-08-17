@@ -88,6 +88,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
   const cardEyebrowRef = useRef(null);
   const cardHeadingRef = useRef(null);
   const componentRefs = useRef([]);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const calculateOffset = () => {
@@ -142,6 +143,35 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
     return () => window.removeEventListener("resize", handleResize);
   }, [blocks]); // recalc if content changes (different page)
 
+  useEffect(() => {
+    const targets = [
+      ...(contentRef.current ? contentRef.current.querySelectorAll(".block-fade-in") : []),
+    ];
+
+    if (targets.length === 0) return;
+
+    // If the browser doesn't support IntersectionObserver, just show everything.
+    if (typeof IntersectionObserver === "undefined") {
+      targets.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [blocks]); // re-observe fresh nodes when content changes (different page)
+
   return (
     <div className="page" style={accent ? { "--accent": accent } : undefined}>
       <div className="top-fade" />
@@ -150,9 +180,9 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
       <main className="main">
         <section className="hero">
           {animation ? (
-            <LottiePlayer animationData={animation} loop className="opening-graphic" />
+            <LottiePlayer animationData={animation} loop className="opening-graphic fade-in" />
           ) : (
-            <div className="placeholder opening-graphic" />
+            <div className="placeholder opening-graphic fade-in" />
           )}
           <h1 className="title">{title}</h1>
           <div className="buttons">
@@ -167,14 +197,18 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
           </div>
         </section>
 
-        <section className="content">
+        <section className="content" ref={contentRef}>
           {blocks.map((block, i) => {
             if (block.type === "paragraph") {
-              return <p key={i} className="paragraph">{renderWithCode(block.text)}</p>;
+              return (
+                <p key={i} className="paragraph block-fade-in">
+                  {renderWithCode(block.text)}
+                </p>
+              );
             }
             if (block.type === "image") {
               return (
-                <div key={i} className="image-wrap">
+                <div key={i} className="image-wrap block-fade-in">
                   {block.src ? (
                     <img src={block.src} alt={block.alt || ""} className="image image-real" />
                   ) : (
@@ -185,7 +219,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
             }
             if (block.type === "animation") {
               return (
-                  <div key={i} className="image-wrap">
+                  <div key={i} className="image-wrap block-fade-in">
                     {block.src ? (
                         <LottiePlayer animationData={block.src} loop className="image image-real" />
                     ) : (
@@ -196,7 +230,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
             }
             if (block.type === "header") {
               return (
-                <div key={i} className="section-header">
+                <div key={i} className="section-header block-fade-in">
                   <h2>{block.text}</h2>
                 </div>
               );
@@ -205,7 +239,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
               return (
                 <div
                   key={i}
-                  className="block-component"
+                  className="block-component block-fade-in"
                   ref={(el) => (componentRefs.current[i] = el)}
                 >
                   <div className="block-component-inner">{block.node}</div>
@@ -215,7 +249,7 @@ export default function PageTemplate({ title, blocks, download, nextPage, accent
             return null;
           })}
 
-          <div className="cards">
+          <div className="cards block-fade-in">
             <a
               className="card card-download"
               href={download.href}
