@@ -15,12 +15,12 @@ const renderingContent = {
     },
     {
       type: "paragraph",
-      text: "The first choice to make is the codec. You might be used to file types, you’ve probably" +
-          " seen a lot of .mp4 files, maybe even a .mov. The codec *is not the same as the file " +
+      text: "The first choice to make is the video codec. You might familiar with filetypes, you’ve probably" +
+          " seen a lot of .mp4 files, maybe even an .mov. The codec *is not the same as the file " +
           "type*. For example, H.264 (the most common type for viewing) can come in the form of an " +
           ".mp4 *or* an .mov. A lossless format like Prores 422 will also be a .mov file, but won’t " +
-          "be viewable for most services. Here’s a table of a few different codecs, their file " +
-          "extensions, typical sizes, and the reasons you might pick them.",
+          "be viewable for most services. Here’s a few different codecs, their typical sizes, file " +
+          "extensions, and when they're used.",
     },
     {
       type: "component",

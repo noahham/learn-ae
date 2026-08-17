@@ -29,7 +29,11 @@ const easingContent = {
       text: "From keyframes, we now know that After Effects uses keyframes as a starting and " +
           "stopping point for animation. It travels exactly the same distance each frame until it " +
           "reaches the end. But in real life, how many things really travel so linearly? Almost " +
-          "nothing. Imagine driving a car, and you see a red light coming up. Do you really travel " +
+          "nothing.",
+    },
+    {
+      type: "paragraph",
+      text: "Imagine driving a car, and you see a red light coming up. Do you really travel " +
           "the exact same distance each second until you get to that light? Of course not, it’d be " +
           "the most uncomfortable stop ever. As you pull up to that light, you *ease into* the " +
           "brakes. When the light flips green, you *ease off* of the brake and onto the gas. This is" +
@@ -39,7 +43,7 @@ const easingContent = {
     },
     {
       type: "paragraph",
-      text: "There is one major tradeoff that you have to consider when using easing. If you keep " +
+      text: "There is one foundational tradeoff that to consider when easing. If you keep " +
           "the keyframes the same distance apart but slow down some part of the animation, After " +
           "Effects *must* keep the promise to arrive at the second keyframe on time by speeding up " +
           "some other part of the animation to compensate. This is best shown with an easing curve.",
@@ -53,7 +57,7 @@ const easingContent = {
       type: "paragraph",
       text: "This is an easing curve. The x-axis is Time, the y-axis is % Complete. That is, if the " +
           "y-level is at 50%, the animation is halfway done. In the case of the animation below, the" +
-          " red circle would be exactly halfway between the green and yellow squares.",
+          " red circle would be exactly halfway between its left and right keyframes.",
     },
     {
       type: "component",
@@ -107,7 +111,7 @@ const easingContent = {
           "but that’s not really important. The Value Graph is exactly like the easing curves I’ve " +
           "been discussing so far. Vertical means fast, horizontal means slow. In the Speed Graph, " +
           "the actual speed is measured. A higher value means faster motion, lower means slower. " +
-          "Here’s an example of what smooth motion looks like on the Value Graph vs Speed Graph.",
+          "Here’s an example of what the exact same smooth motion looks like on the Value Graph vs Speed Graph.",
     },
     {
       type: "image",
@@ -129,8 +133,8 @@ const easingContent = {
     {
       type: "paragraph",
       text: "Speaking of tools, there is one extra, super popular plugin that many animators swear " +
-          "by. It’s called Flow. It’s essentially just an interface that lets you make a custom " +
-          "curve, then apply it to some keyframes, kind of like how Easy Ease gives you some preset " +
+          "by. It’s called Flow. It’s essentially just an interface that lets you build a custom " +
+          "curve, then apply it to as many keyframes as you want, kind of like how Easy Ease gives you a preset " +
           "easing. It won’t do all the work for you, but it makes 70% of it a lot easier.",
     },
     {

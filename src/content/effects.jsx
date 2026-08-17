@@ -58,6 +58,8 @@ const effectsContent = {
           "eventually find all of the same effect controls from the first option. I wouldn’t " +
           "recommend using this for now, not until we get to Keyframes.",
     },
+    {// IMG FINDING THE SAME EFFECT OPTIONS IN THE LAYERS PANEL
+       },
     {
       type: "paragraph",
       text: "Not every effect will work for every kind of layer. Many effects might require a text " +
@@ -69,7 +71,7 @@ const effectsContent = {
       type: "paragraph",
       text: "The PARTS acronym is one of the most valuable hotkeys you can memorize. That’s for " +
           "Position, Anchor, Rotation, Transparency, and Scale. For whatever reason, these " +
-          "attributes aren’t included in the effect controls panel (unlike Premiere, which is also " +
+          "attributes aren’t included in the effect controls panel (unlike Premiere Pro, which is also " +
           "made by Adobe), so hitting any of those keys will twirl down the respective attribute in " +
           "the layer panel. With no layer selected, the attribute will open for all layers. Just hit" +
           " the same key again to collapse it all.",

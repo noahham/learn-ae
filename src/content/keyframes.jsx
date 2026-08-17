@@ -40,8 +40,8 @@ const keyframesContent = {
       type: "paragraph",
       text: "Seen above, the two half-shaded diamonds are your keyframes. Each keyframe stores both " +
           "a timestamp and the value of the property that you’re animating. In the example above, " +
-          "the first keyframe promises that at Frame 0, the Position is 0. Similarly, the second " +
-          "keyframe promises that at Frame 10, the Position is 100. That’s what you create. In the " +
+          "the first keyframe promises that at `Frame 0`, the Position is `0`. Similarly, the second " +
+          "keyframe promises that at `Frame 10`, the Position is `100`. That’s what you create. In the " +
           "background, After Effects will do the math on what happens *between* those two keyframes." +
           " With some math, AE calculates the shape must move exactly 10 pixels each frame to get " +
           "from the first to second keyframe in 10 frames. Imagine a road trip where you can " +
@@ -50,7 +50,7 @@ const keyframesContent = {
     },
     {
       type: "paragraph",
-      text: "You can apply this idea to literally any property: rotation, opacity, audio volume, " +
+      text: "You can apply this idea to literally any property: rotation, opacity, volume, " +
           "even properties from effects. This is where keyframing gets complicated sometimes. Let’s " +
           "talk about this animation of a square falling from the sky.",
     },
@@ -63,7 +63,7 @@ const keyframesContent = {
       text: "In a physics sim, you would place a cube in the sky, turn on gravity, maybe add some " +
           "elasticity for bounce, then hit play. For keyframing, this animation is a nightmare. " +
           "Starting with the position, you have to get the right timing for how fast it falls, " +
-          "animate the rotation, decide how many times it’ll bounce (and bounces are the WORST), and" +
+          "add the rotation, decide how many times it’ll bounce (then add Position and Rotation animations *for each bounce*), and" +
           " tweak it over and over and over until it looks kind of real. And even after all that, it" +
           " will still have this sort of cartoonish simplicity to it. For now, the best advice for " +
           "keyframing is to keep it simple. Once you’ve developed an intuition for the basics, you " +
@@ -76,9 +76,9 @@ const keyframesContent = {
     {
       type: "paragraph",
       text: "You know how I said to use the `Properties Panel` instead of the `Layers Panel` for " +
-          "shape properties? And then again, use the `Effects Controls Panel` instead of the " +
-          "`Layers Panel` for effects controls. Keyframes are the reason why all those options are " +
-          "in the Layers panel. Open any property (remember PARTS?) and click the stopwatch to the " +
+          "shape properties? And again, the `Effects Controls Panel` is easier to use than the " +
+          "`Layers Panel`. Keyframes are the reason why all those options are " +
+          "in the Layers panel. Open any property (remember `PARTS`?) and click the stopwatch to the " +
           "left of the property’s name. It should turn blue and a new keyframe should be created " +
           "under the playhead. Try moving the playhead somewhere else and clicking the open diamond " +
           "farther left of the stopwatch. There’s another keyframe. Each time you make a keyframe, " +
@@ -89,6 +89,9 @@ const keyframesContent = {
       text: "You can tell if you’re hovering a keyframe when the open diamond is filled and blue. " +
           "While hovering a keyframe, change the value of the property, then hit play. Notice how " +
           "the value changes as the playhead passes between the keyframes?",
+    },
+    {
+      // Stopwatch/blue diamond
     },
     {
       type: "paragraph",

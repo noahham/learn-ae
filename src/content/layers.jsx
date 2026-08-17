@@ -25,8 +25,8 @@ const layersContent = {
       type: "paragraph",
       text: "Layers are the foundation of AE. If you’ve never used a layer-based program before, " +
           "imagine a stack of different types of paper on top of each other. The papers might be " +
-          "solid, seethrough, colored, or cut, but you can only  look at it from directly above. You" +
-          " see the topmost paper. If it has holes or seethrough parts, you can see the different " +
+          "solid, see-through, colored, or cut, but you can only  look at it from directly above. You'll" +
+          " see the topmost paper. If it has holes or transparent parts, you can see the different " +
           "papers under it, which might have their own gaps and transparencies. In After Effects, " +
           "this stack of papers is called a composition.",
     },
@@ -46,9 +46,8 @@ const layersContent = {
     },
     {
       type: "paragraph",
-      text: "As you can see, each layer is only visible when the playhead (the blue thing with the " +
-          "notch at the top) touches it. Just like the stack of papers, the layers on the top are " +
-          "shown above the layers below it. You can adjust their ordering and timings with the " +
+      text: "As you can see, each layer is only visible when the playhead (the white thing with the " +
+          "notch at the top) touches it. In AE, you can adjust their ordering and timings with the " +
           "hotkeys below.",
     },
     {
@@ -65,18 +64,19 @@ const layersContent = {
     {
       type: "paragraph",
       text: "As you can tell, manipulating layers is pretty simple. On top of being able to trim, move, and reorder " +
-          "them, videos particularly are kind of weird. You can actually slide the unused part of " +
+          "them, videos in particular are kind of weird. You can actually slide part of " +
           "the video in order to change which part of the video is actually shown for the layer.",
     },
     {
       type: "component",
       node: <SingleLayer />,
     },
+    { type: "header", text: "Precompositions" },
     {
       type: "paragraph",
       text: "One more thing. You can bundle a group of layers into something called a precomposition" +
           " (or precomp). This can simplify your current composition and also optimize real-time " +
-          "rendering a bit. Double clicking on a precomp will open it, like a folder. From then, you" +
+          "rendering a bit. Double clicking on a precomp will open it, like a folder on your desktop. From then, you" +
           " can click through the tabs at the top of the `Layers Panel` to go back to your original " +
           "composition. The new precomposition will also add another composition entry to your " +
           "`Project Panel`.",
