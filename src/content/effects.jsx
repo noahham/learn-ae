@@ -1,5 +1,6 @@
 import effectsAndPresets from "../assets/images/effects/effects-and-presets.png";
 import effectsControls from "../assets/images/effects/effects-controls.png";
+import LayerControls from "../assets/images/effects/layers-controls.png"
 import effectsAnim from "../assets/animations/effects.json";
 import HotkeysGroup from "../components/HotkeysGroup.jsx";
 
@@ -58,8 +59,11 @@ const effectsContent = {
           "eventually find all of the same effect controls from the first option. I wouldn’t " +
           "recommend using this for now, not until we get to Keyframes.",
     },
-    {// IMG FINDING THE SAME EFFECT OPTIONS IN THE LAYERS PANEL
-       },
+    {
+      type: "image",
+      src: LayerControls,
+      alt: "Effect Controls in Layer Panel",
+    },
     {
       type: "paragraph",
       text: "Not every effect will work for every kind of layer. Many effects might require a text " +

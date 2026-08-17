@@ -1,6 +1,7 @@
 import keyframesAnim from "../assets/animations/keyframing.json";
 import fallingCube from "../assets/animations/falling-cube.json";
 import LinearKeyframes from "../components/LinearKeyframes.jsx";
+import LayerKeyframes from "../assets/images/keyframes/layer-keyframes.png";
 
 
 const keyframesContent = {
@@ -91,7 +92,9 @@ const keyframesContent = {
           "the value changes as the playhead passes between the keyframes?",
     },
     {
-      // Stopwatch/blue diamond
+      type: "image",
+      src: LayerKeyframes,
+      alt: "Keyframes in Layer Panel",
     },
     {
       type: "paragraph",
