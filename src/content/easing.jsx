@@ -8,13 +8,14 @@ import easingAnim from "../assets/animations/easing.json";
 import HotkeysGroup from "../components/HotkeysGroup";
 import EasingKeyframes from "../components/EasingKeyframes.jsx";
 import ExternalLink from "../components/ExternalLink.jsx";
+import { getDownloadSizeLabel } from "../utils/downloadMetadata.js";
 
 const easingContent = {
   title: "EASING",
   accent: "#910DDD",
   download: {
     label: "Download Demo",
-    sizeLabel: "167mb ZIP File.",
+    sizeLabel: getDownloadSizeLabel("/downloads/easing-demo.zip"),
     href: "/downloads/easing-demo.zip",
   },
   animation: easingAnim,

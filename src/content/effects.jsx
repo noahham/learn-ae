@@ -3,13 +3,14 @@ import effectsControls from "../assets/images/effects/effects-controls.png";
 import LayerControls from "../assets/images/effects/layers-controls.png"
 import effectsAnim from "../assets/animations/effects.json";
 import HotkeysGroup from "../components/HotkeysGroup.jsx";
+import { getDownloadSizeLabel } from "../utils/downloadMetadata.js";
 
 const effectsContent = {
   title: "EFFECTS",
   accent: "#FFC43D",
   download: {
     label: "Download Demo",
-    sizeLabel: "167mb ZIP File.",
+    sizeLabel: getDownloadSizeLabel("/downloads/effects-demo.zip"),
     href: "/downloads/effects-demo.zip",
   },
   animation: effectsAnim,

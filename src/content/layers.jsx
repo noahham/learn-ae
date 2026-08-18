@@ -4,6 +4,7 @@ import layersAnim from "../assets/animations/layers.json";
 import MultiLayer from "../components/MultiLayer.jsx";
 import SingleLayer from "../components/SingleLayer.jsx";
 import HotkeysGroup from "../components/HotkeysGroup";
+import { getDownloadSizeLabel } from "../utils/downloadMetadata.js";
 
 
 const layersContent = {
@@ -11,7 +12,7 @@ const layersContent = {
   accent: "#910DDD",
   download: {
     label: "Download Demo",
-    sizeLabel: "167mb ZIP File.",
+    sizeLabel: getDownloadSizeLabel("/downloads/layers-demo.zip"),
     href: "/downloads/layers-demo.zip",
   },
   animation: layersAnim,

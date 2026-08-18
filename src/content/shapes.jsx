@@ -7,6 +7,7 @@ import mask2 from "../assets/images/shapes/mask-2.png";
 import mask3 from "../assets/images/shapes/mask-3.png";
 import methodFavicon from "../assets/images/shapes/method.png"
 import ExternalLink from "../components/ExternalLink.jsx";
+import { getDownloadSizeLabel } from "../utils/downloadMetadata.js";
 
 
 const shapesContent = {
@@ -14,7 +15,7 @@ const shapesContent = {
   accent: "#177FCE",
   download: {
     label: "Download Demo",
-    sizeLabel: "167mb ZIP File.",
+    sizeLabel: getDownloadSizeLabel("/downloads/shapes-demo.zip"),
     href: "/downloads/shapes-demo.zip",
   },
   animation: shapesAnim,

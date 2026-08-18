@@ -2,6 +2,7 @@ import keyframesAnim from "../assets/animations/keyframing.json";
 import fallingCube from "../assets/animations/falling-cube.json";
 import LinearKeyframes from "../components/LinearKeyframes.jsx";
 import LayerKeyframes from "../assets/images/keyframes/layer-keyframes.png";
+import { getDownloadSizeLabel } from "../utils/downloadMetadata.js";
 
 
 const keyframesContent = {
@@ -9,7 +10,7 @@ const keyframesContent = {
   accent: "#E3170A",
   download: {
     label: "Download Demo",
-    sizeLabel: "167mb ZIP File.",
+    sizeLabel: getDownloadSizeLabel("/downloads/keyframes-demo.zip"),
     href: "/downloads/keyframes-demo.zip",
   },
   animation: keyframesAnim,

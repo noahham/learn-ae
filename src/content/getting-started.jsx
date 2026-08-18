@@ -1,13 +1,14 @@
 import missingFootage from "../assets/images/getting-started/missing-footage.png";
 import relinkFootage from "../assets/images/getting-started/relink-footage.png";
 import gettingStartedAnim from "../assets/animations/getting-started.json";
+import { getDownloadSizeLabel } from "../utils/downloadMetadata.js";
 
 const gettingStartedContent = {
   title: "THE START",
   accent: "#E3170A",
   download: {
     label: "Download All Demos",
-    sizeLabel: "167mb ZIP File.",
+    sizeLabel: getDownloadSizeLabel("/downloads/all-demos.zip"),
     href: "/downloads/all-demos.zip",
   },
   nextPage: {

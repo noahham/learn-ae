@@ -7,13 +7,14 @@ import blend3 from "../assets/images/blending/blend-3.png";
 import adjust1 from "../assets/images/shapes/mask-1.png";
 import adjust2 from "../assets/images/shapes/mask-2.png";
 import adjust3 from "../assets/images/blending/adjustment.png";
+import { getDownloadSizeLabel } from "../utils/downloadMetadata.js";
 
 const blendingContent = {
   title: "BLENDING",
   accent: "#177FCE",
   download: {
     label: "Download Demo",
-    sizeLabel: "167mb ZIP File.",
+    sizeLabel: getDownloadSizeLabel("/downloads/blending-demo.zip"),
     href: "/downloads/blending-demo.zip",
   },
   animation: blendingAnim,
