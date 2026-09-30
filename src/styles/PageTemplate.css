@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 
 :root {
     --bg: #0c0e23;
@@ -9,8 +9,9 @@
     --accent-blue: #177FCE;
     --accent-yellow: #FFC43D;
     --border: rgba(255, 255, 255, 0.1);
-    --font-display: "Costaline", -apple-system, Roboto, Helvetica, sans-serif;
-    --font-body: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+    --font-display: "Costaline", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-code: "Source Code Pro", monospace;
     --card-next-offset: 0px;
     --card-span-margin: 0px;
 }
@@ -183,7 +184,7 @@ body {
     padding: 13px 40px;
     border-radius: 50px;
     border: none;
-    font-family: var(--font-body), system-ui;
+    font-family: var(--font-body), sans-serif;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -260,7 +261,7 @@ body {
 .paragraph {
     margin: 0;
     color: rgba(255, 255, 255, 0.9);
-    font-family: var(--font-body), system-ui;
+    font-family: var(--font-body), sans-serif;
     font-size: clamp(16px, 2vw, 18px);
     font-weight: 500;
     line-height: 1.6;
@@ -275,7 +276,7 @@ code {
     padding: 1px 6px;
     margin-left: 2px;
     margin-right: 2px;
-    font-family: "Source Code Pro", monospace;
+    font-family: var(--font-code), monospace;
     font-weight: 400;
     font-size: 16px;
     letter-spacing: -1%;
